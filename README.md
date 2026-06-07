@@ -142,7 +142,8 @@ family_appは、家族それぞれの家庭内での貢献を見える化し、�
 ### 10-1. 使用予定の技術
 
 **バックエンド**
-Ruby on Rails
+Ruby on Rails:3.3.6
+Ruby:8.1.3
 **フロントエンド**
 HTML
 CSS
