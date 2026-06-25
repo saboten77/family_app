@@ -289,4 +289,8 @@ ReactやNext.jsなどの技術については興味を持っているが、卒�
 
 https://www.figma.com/design/n0hSx4Ryrj6yI7fEIxu7YU/family_app?node-id=0-1&t=evCCN3TANqe57Bsf-1
 
+## 12.ER図
+
+https://drive.google.com/file/d/1OEOMRJjMhr1SuPN-7MSKzhT3uiDfpVHr/view?usp=sharing
+
 
