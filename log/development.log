@@ -1372,3 +1372,98 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for ::1 at 2026-07-04 15:00:23 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FamilyApp'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | GC: 0.0ms)
+Completed 200 OK in 63ms (Views: 43.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2026-07-04 15:00:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 15.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 0.0ms)
+Completed 200 OK in 96ms (Views: 19.8ms | ActiveRecord: 42.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2026-07-04 15:00:27 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_error_messages.html.erb (Duration: 21.3ms | GC: 20.6ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 26.7ms | GC: 20.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | GC: 20.6ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 20.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2026-07-04 15:00:29 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 1.5ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2026-07-04 15:00:34 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.9ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 1.2ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2026-07-04 15:00:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.7ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2026-07-04 15:00:35 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2026-07-04 15:00:36 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2026-07-04 15:00:36 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/saboten/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/devise-5.0.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
