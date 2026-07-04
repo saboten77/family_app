@@ -8,3 +8,102 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/* =========================
+   🌱 カラー設計（世界観の心臓）
+========================= */
+:root {
+  --pon-light-green: #DDECC8; /* やさしい黄緑 */
+  --pon-soft-yellow: #F4F1C9; /* まろやか黄 */
+  --pon-accent: #A8C98A;      /* 締める緑 */
+  --pon-bg: #FAFAF3;          /* あたたか白 */
+  --pon-text: #3E3E3E;        /* やわグレー */
+}
+
+/* =========================
+   🧱 ベース（全体の土台）
+========================= */
+body {
+  background: var(--pon-bg);
+  color: var(--pon-text);
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 0;
+}
+
+/* =========================
+   📦 カード（情報の入れ物）
+========================= */
+.card {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.card-btn {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+
+
+/* =========================
+   🔘 ボタン（基本）
+========================= */
+.button {
+  background: var(--pon-accent);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-block; /* ←これ追加 */
+  width: auto;           /* ←保険 */
+}
+
+/* =========================
+   🧭 ボタンエリア（並べる箱）
+========================= */
+.button-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================
+   ✨ 補助ユーティリティ
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+/* ログイン */
+.card-btn.login {
+  background: var(--pon-accent);
+  color: white;
+}
+
+/* 新規登録 */
+.card-btn.signup {
+  background: var(--pon-light-green);
+  color: #3E3E3E;
+}
+
+.entry-box {
+  text-align: center;
+}

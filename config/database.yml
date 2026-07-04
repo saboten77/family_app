@@ -10,7 +10,10 @@ development:
 test:
   <<: *default
   database: family_app_test
-
+  username: postgres
+  password: password
+  host: localhost
+  
 production:
   primary:
     <<: *default

@@ -1,3 +1,22 @@
+<div class="entry-wrapper">
 
-<h1>ポン吉アプリ</h1>
-<p>開発中です！</p>
+  <div class="entry-box">
+
+    <h1 class="title">ポン吉へようこそ</h1>
+    <p class="sub">今日の家庭、ちょっと動かしてみる？</p>
+    
+    <div class="button-area">
+
+      <div class="card">
+        <%= link_to "ログイン", new_user_session_path, class: "card-btn login" %>
+      </div>
+
+      <div class="card">
+        <%= link_to "新規登録", new_user_registration_path, class: "card-btn signup" %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
