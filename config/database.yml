@@ -17,4 +17,4 @@ test:
 production:
   primary:
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+    url: <%= ENV["postgresql://family_app_db_q20i_user:OCxPsrUCf5865HUjyQNBobigmIUuEybg@dpg-d950gp67r5hc73dshv0g-a/family_app_db_q20i"] %>
