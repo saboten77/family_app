@@ -13,8 +13,8 @@ test:
   username: postgres
   password: password
   host: localhost
-  
+
 production:
   primary:
     <<: *default
-    database: family_app_production
+    url: <%= ENV["DATABASE_URL"] %>
