@@ -107,3 +107,30 @@ body {
 .entry-box {
   text-align: center;
 }
+
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f7f7f7, #eaf7f0);
+}
+
+.auth-box {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.actions input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #7acb88;
+  color: white;
+  font-weight: bold;
+}
+
