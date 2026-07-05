@@ -1,29 +1,12 @@
-<div class="dashboard">
+<nav class="bottom-nav">
 
-  <header class="dashboard-header">
-    Header
-  </header>
+ <%= link_to tasks_path, class: "nav-item" do %>
+  <div class="icon">🧺</div>
+  <div class="label">家事一覧</div>
+<% end %>
+  <%= link_to task_histories_path, class: "nav-item" do %>
+  <div class="icon">📅</div>
+  <div class="label">家事履歴</div>
+<% end %>
 
-  <main class="dashboard-main">
-
-    <section class="ponkichi-area">
-      ポン吉
-    </section>
-
-    <section class="energy-area">
-      <div class="energy-card">家庭安定度</div>
-      
-    </section>
-
-    <section class="task-area">
-      家事一覧
-    </section>
-
-  </main>
-
-  <footer class="bottom-nav">
-    <%= link_to "📝 家事記録", tasks_path %>
-<%= link_to "📖 家事履歴", task_histories_path %>
-  </footer>
-
-</div>
+</nav>
