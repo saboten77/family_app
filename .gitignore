@@ -1,1 +1,21 @@
-tmp/
+# Ignore bundler config.
+/.bundle
+
+# Ignore logs and tempfiles.
+/log/*
+!/log/.keep
+
+/tmp/*
+!/tmp/.keep
+
+# Ignore pidfiles.
+/tmp/pids/*
+!/tmp/pids/
+/tmp/pids/.keep
+
+# Ignore uploaded files.
+/storage/*
+!/storage/.keep
+
+# Ignore master key.
+/config/master.key
