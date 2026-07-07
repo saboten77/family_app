@@ -1,37 +1,46 @@
 Rails.application.routes.draw do
-  get "pages/terms"
-  get "pages/privacy"
-  get "contacts/new"
-  get "families/index"
-  get "accounts/show"
-  get "accounts/edit_profile"
-  get "accounts/edit_email"
-  get "accounts/edit_password"
-  get "my_pages/show"
-  get "task_histories/index"
-  get "tasks/index"
-  get "dashboard/index"
+  # ユーザー認証（Devise）
   devise_for :users
+
+  # ホーム画面
   root "home#index"
+
+  # ダッシュボード
   get "dashboard", to: "dashboard#index"
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  get "up" => "rails/health#show", as: :rails_health_check
+
+  # 家事一覧
   get "tasks", to: "tasks#index"
+
+  # 家事履歴
   get "task_histories", to: "task_histories#index"
+
+  # マイページ
   get "mypage", to: "my_pages#show"
-  # アカウント
+
+  # アカウント設定
   get "account", to: "accounts#show"
+
+  # プロフィール変更
   get "account/profile", to: "accounts#edit_profile"
+
+  # メールアドレス変更
   get "account/email", to: "accounts#edit_email"
+
+  # パスワード変更
   get "account/password", to: "accounts#edit_password"
 
-# 家族管理
-  resources :families, only: [:index]
+  # 家族管理
+  resources :families, only: [ :index ]
 
-# お問い合わせ
-  resources :contacts, only: [:new]
+  # お問い合わせ
+  resources :contacts, only: [ :new ]
 
-# 利用規約・プライバシーポリシー
+  # 利用規約
   get "terms", to: "pages#terms"
+
+  # プライバシーポリシー
   get "privacy", to: "pages#privacy"
+
+  # ヘルスチェック（Render確認用）
+  get "up" => "rails/health#show", as: :rails_health_check
 end
