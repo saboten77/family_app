@@ -7,17 +7,17 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit_profile" do
-    get edit_account_profile_path
+    get account_profile_path
     assert_response :success
   end
 
   test "should get edit_email" do
-    get edit_account_email_path
+    get account_email_path
     assert_response :success
   end
 
   test "should get edit_password" do
-    get edit_account_password_path
+    get account_password_path
     assert_response :success
   end
 end
