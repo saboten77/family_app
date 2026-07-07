@@ -1,12 +1,17 @@
+<header class="home-header">
+  <%= link_to "☰", mypage_path, class: "menu-button" %>
+
+  <h1>ポン吉</h1>
+</header>
+
 <nav class="bottom-nav">
+  <%= link_to tasks_path, class: "nav-item" do %>
+    <div class="icon">🧺</div>
+    <div class="label">家事一覧</div>
+  <% end %>
 
- <%= link_to tasks_path, class: "nav-item" do %>
-  <div class="icon">🧺</div>
-  <div class="label">家事一覧</div>
-<% end %>
   <%= link_to task_histories_path, class: "nav-item" do %>
-  <div class="icon">📅</div>
-  <div class="label">家事履歴</div>
-<% end %>
-
+    <div class="icon">📅</div>
+    <div class="label">家事履歴</div>
+  <% end %>
 </nav>

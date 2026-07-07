@@ -1,0 +1,34 @@
+<div class="mypage">
+  <h1 class="page-title">マイページ</h1>
+
+  <div class="profile-card">
+    <div class="character">
+      🐹
+    </div>
+
+    <div class="profile-info">
+      <h2 class="user-name">友希さん</h2>
+
+      <p class="message">
+        今日もぼちぼちいこか〜🌿
+      </p>
+    </div>
+  </div>
+
+  <div class="menu-card">
+
+  <%= link_to "👤 アカウント設定", account_path %>
+
+  <%= link_to "👨‍👩‍👧 家族管理", families_path %>
+
+  <%= link_to "📄 利用規約", terms_path %>
+
+  <%= link_to "🔒 プライバシーポリシー", privacy_path %>
+
+  <%= link_to "✉️ お問い合わせ", new_contact_path %>
+
+  <%= link_to "🚪 ログアウト", destroy_user_session_path,
+      data: { turbo_method: :delete } %>
+
+  </div>
+</div>
