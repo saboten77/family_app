@@ -1,0 +1,159 @@
+body {
+  background-color: #f8f9e8;
+  margin: 0;
+  font-family: "Yu Gothic", sans-serif;
+}
+
+.mypage {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px 20px 100px;
+}
+
+.page-title {
+  text-align: center;
+  color: #4f6b3c;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.character {
+  font-size: 60px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.user-name {
+  margin: 0;
+  color: #4f6b3c;
+  font-size: 22px;
+}
+
+.message {
+  margin-top: 8px;
+  color: #777;
+  font-size: 15px;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.menu-card a:last-child {
+  border-bottom: none;
+}
+
+.menu-card a:hover {
+  background-color: #f7fbe8;
+}
+
+.menu-card span {
+  color: #bbb;
+  font-size: 20px;
+}
+
+.logout {
+  color: #d9534f !important;
+  font-weight: bold;
+}
+
+/* =========================
+   マイページ共通
+========================= */
+
+.page-title {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: #4f6b3c;
+}
+
+.menu-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.menu-card a {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  color: #3E3E3E;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+.menu-card a:last-child {
+  border-bottom: none;
+}
+
+.menu-card a:hover {
+  background: #F8FBEF;
+}
+
+.account-page {
+  padding: 20px;
+}
+
+.profile-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 30px auto;
+  background: var(--pon-light-green);
+  color: var(--pon-text);
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background: var(--pon-accent);
+  color: white;
+}
+
+.back-button-area {
+  text-align: center;
+}

@@ -88,3 +88,16 @@
 .nav-item.active .icon {
   transform: translateY(-3px) scale(1.15);
 }
+
+.menu-button {
+  text-decoration: none;
+  font-size: 30px;
+  color: #4f6b3c;
+}
+
+.home-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
