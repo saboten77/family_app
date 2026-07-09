@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "family_invites/show"
+
+  resource :profile, only: [ :edit, :update ]
   # ユーザー認証（Devise）
   devise_for :users
 
@@ -29,8 +32,10 @@ Rails.application.routes.draw do
   # パスワード変更
   get "account/password", to: "accounts#edit_password"
 
-  # 家族管理
-  resources :families, only: [ :index ]
+ # 家族管理
+ resources :families, only: [ :index, :new, :create ]
+ resources :family_joins, only: [ :new, :create ]
+ resources :family_invites, only: [ :show ]
 
   # お問い合わせ
   resources :contacts, only: [ :new ]
@@ -43,4 +48,7 @@ Rails.application.routes.draw do
 
   # ヘルスチェック（Render確認用）
   get "up" => "rails/health#show", as: :rails_health_check
+
+
+  resources :family_invites, only: [ :show ]
 end

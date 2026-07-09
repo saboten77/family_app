@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "families", "data-turbo-track": "reload" %>
+
+<div class="family-container">
+
+  <div class="family-card">
+
+    <h1>🎉 招待コード</h1>
+
+    <p class="subtitle">
+      家族を招待するためのコードです
+    </p>
+
+
+    <div class="invite-code">
+      <%= @family.invite_code %>
+    </div>
+
+
+    <button class="copy-btn">
+      📋 コピーする
+    </button>
+
+
+    <p class="share-text">
+      家族にシェアしよう！
+    </p>
+
+
+   <%= link_to "次へ", dashboard_path, class: "next-btn" %>
+
+  </div>
+
+</div>

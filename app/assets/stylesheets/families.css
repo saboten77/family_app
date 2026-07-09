@@ -1,0 +1,163 @@
+.family-container {
+  min-height: 100vh;
+  background: #f7fbef;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.family-card {
+  width: 420px;
+  background: white;
+
+  border-radius: 24px;
+  padding: 40px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.family-card h1 {
+  color: #6aa84f;
+  margin-bottom: 20px;
+}
+
+.family-card .subtitle {
+  color: #888;
+  margin-bottom: 45px; /* ←ここを広げた */
+}
+
+
+/* 家族名入力 */
+
+.family-field {
+  margin-bottom: 35px;
+}
+
+.family-field label {
+  display: block;
+  text-align: left;
+
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.family-field input {
+  width: 100%;
+  padding: 14px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+  font-size: 16px;
+
+  background: #fffef5;
+}
+
+/* 次へボタンと統一🐾 */
+
+.next-btn {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #9bcf53;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.next-btn:hover {
+  background: #84b948;
+  transform: translateY(-2px);
+}
+
+.join-btn {
+  display: block;
+
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: #f4d58d; /* やさしいオレンジ黄色 */
+  color: #6b5a2b;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: .2s;
+}
+
+.join-btn:hover {
+  background: #edc56b;
+  transform: translateY(-2px);
+}
+
+.invite-code {
+  background: #fffef5;
+
+  border: 2px dashed #9bcf53;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  letter-spacing: 5px;
+
+  color: #6aa84f;
+
+  margin: 30px 0;
+}
+
+
+.copy-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: #f4d58d;
+
+  color: #6b5a2b;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+}
+
+
+.share-text {
+  margin: 35px 0 20px;
+
+  color: #777;
+
+  font-weight: bold;
+}

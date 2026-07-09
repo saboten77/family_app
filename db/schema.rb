@@ -10,20 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_04_104401) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_08_225735) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "families", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "invite_code"
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "character"
     t.datetime "created_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.bigint "family_id"
     t.string "name"
+    t.string "nickname"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["family_id"], name: "index_users_on_family_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "users", "families"
 end

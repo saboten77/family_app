@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "families", "data-turbo-track": "reload" %>
+<div class="family-container">
+
+  <div class="family-card">
+
+    <h1>家族を作成</h1>
+
+    <p class="subtitle">
+      家族の名前を決めよう！
+    </p>
+
+    <%= form_with model: @family do |f| %>
+
+      <div class="field">
+        <%= f.label :name, "家族名" %>
+        <%= f.text_field :name, placeholder: "ポン吉ファミリー" %>
+      </div>
+
+      <%= f.submit "家族を作成する", class: "next-btn" %>
+
+    <% end %>
+     <%= link_to "🔑 招待コードで参加する", new_family_join_path, class: "join-btn" %>
+
+  </div>
+
+</div>

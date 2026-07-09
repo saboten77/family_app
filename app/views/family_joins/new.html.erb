@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "families", "data-turbo-track": "reload" %>
+
+<div class="family-container">
+
+  <div class="family-card">
+
+    <h1>家族に参加</h1>
+
+    <p class="subtitle">
+      招待コードを入力して家族に参加しよう！
+    </p>
+
+    <%= form_with url: family_joins_path do %>
+
+      <div class="field">
+        <%= label_tag :invite_code, "招待コード" %>
+        <%= text_field_tag :invite_code %>
+      </div>
+
+      <%= submit_tag "参加する", class: "next-btn" %>
+
+    <% end %>
+
+  </div>
+
+</div>
