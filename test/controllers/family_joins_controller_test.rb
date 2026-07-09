@@ -2,12 +2,12 @@ require "test_helper"
 
 class FamilyJoinsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get family_joins_new_url
+    get new_family_join_url
     assert_response :success
   end
 
   test "should get create" do
-    get family_joins_create_url
+    post family_joins_url
     assert_response :success
   end
 end

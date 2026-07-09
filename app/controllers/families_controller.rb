@@ -1,5 +1,4 @@
 class FamiliesController < ApplicationController
-
   def new
     @family = Family.new
   end
@@ -20,5 +19,4 @@ class FamiliesController < ApplicationController
   def family_params
     params.require(:family).permit(:name)
   end
-
 end
