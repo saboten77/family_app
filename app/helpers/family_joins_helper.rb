@@ -1,0 +1,2 @@
+module FamilyJoinsHelper
+end

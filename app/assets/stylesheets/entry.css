@@ -1,0 +1,62 @@
+.entry-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry-box {
+  text-align: center;
+}
+
+
+.title {
+  color: #6aa84f;
+  margin-bottom: 15px;
+}
+
+.sub {
+  color: #888;
+  margin-bottom: 35px;
+}
+
+
+.button-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.card {
+  width: 320px;
+}
+
+
+.card-btn {
+  display: block;
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  box-sizing: border-box;
+}
+
+
+.card-btn.login {
+  background: #A8C98A;
+  color: white;
+}
+
+
+.card-btn.signup {
+  background: #DDECC8;
+  color: #3E3E3E;
+}
