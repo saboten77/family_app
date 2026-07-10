@@ -1,11 +1,12 @@
 class Family < ApplicationRecord
-  has_many :users
+  validates :name, presence: true
+  validates :invite_code, presence: true, uniqueness: true
 
-  before_create :generate_invite_code
+  before_validation :generate_invite_code
 
   private
 
   def generate_invite_code
-    self.invite_code = SecureRandom.alphanumeric(6).upcase
+    self.invite_code ||= SecureRandom.alphanumeric(6).upcase
   end
 end
