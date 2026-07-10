@@ -1,4 +1,6 @@
 class Family < ApplicationRecord
+  has_many :family_members
+  has_many :users, through: :family_members
   validates :name, presence: true
   validates :invite_code, presence: true, uniqueness: true
 

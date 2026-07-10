@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_08_225735) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_10_103855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -19,6 +19,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_225735) do
     t.string "invite_code"
     t.string "name"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "family_members", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "family_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["family_id"], name: "index_family_members_on_family_id"
+    t.index ["user_id"], name: "index_family_members_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,5 +47,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_225735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "family_members", "families"
+  add_foreign_key "family_members", "users"
   add_foreign_key "users", "families"
 end
