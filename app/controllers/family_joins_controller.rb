@@ -3,14 +3,14 @@ class FamilyJoinsController < ApplicationController
   end
 
   def create
-    family = Family.find_by(invite_code: params[:invite_code])
+  family = Family.find_by(invite_code: params[:invite_code])
 
     if family
-      current_user.update(family: family)
-      redirect_to dashboard_path, notice: "家族に参加しました！"
+    current_user.family_members.create(family: family)
+    redirect_to dashboard_path, notice: "家族に参加しました！"
     else
-      flash.now[:alert] = "招待コードが見つかりません"
-      render :new, status: :unprocessable_entity
+    flash.now[:alert] = "招待コードが見つかりません"
+    render :new, status: :unprocessable_entity
     end
   end
 end
