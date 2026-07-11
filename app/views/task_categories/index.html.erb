@@ -1,0 +1,43 @@
+<div class="task-category-page">
+
+  <h1 class="page-title">🧺 家事を選ぼう</h1>
+
+  <div class="category-list">
+    <% @task_categories.each do |category| %>
+
+      <%= link_to tasks_path(task_category_id: category.id), class: "category-card" do %>
+
+        <div class="category-icon">
+          <%=
+            case category.name
+            when "掃除"
+              "🧹"
+            when "料理"
+              "🍳"
+            when "洗濯"
+              "🧺"
+            when "買い物"
+              "🛒"
+            when "ゴミ・片付け"
+              "🗑️"
+            else
+              "🏠"
+            end
+          %>
+        </div>
+
+        <div class="category-name">
+          <%= category.name %>
+        </div>
+
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="dashboard-back">
+  <%= link_to dashboard_path, class: "back-home-button" do %>
+    🏠 ポン吉のお家へ戻る
+  <% end %>
+</div>
