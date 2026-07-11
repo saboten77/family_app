@@ -1,1 +1,27 @@
-<h1>家事記録</h1>
+<div class="task-page">
+
+  <h1 class="page-title">
+    <%= @task_category.name %>
+  </h1>
+
+  <div class="task-list">
+    <% @tasks.each do |task| %>
+
+      <div class="task-card">
+        <span class="task-icon">🐻</span>
+        <span class="task-name">
+          <%= task.name %>
+        </span>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
+
+
+<div class="dashboard-back">
+  <%= link_to task_categories_path, class: "back-home-button" do %>
+    🧺 カテゴリへ戻る
+  <% end %>
+</div>

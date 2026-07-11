@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "task_categories/index"
   get "family_invites/show"
 
   resource :profile, only: [ :edit, :update ]
@@ -51,4 +52,5 @@ Rails.application.routes.draw do
 
 
   resources :family_invites, only: [ :show ]
+  resources :task_categories, only: [:index]
 end
