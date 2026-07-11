@@ -161,3 +161,78 @@
 
   font-weight: bold;
 }
+
+#家族管理
+
+.family-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+
+  width: 90%;
+  max-width: 420px;
+
+  margin: 30px auto;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.family-title {
+  font-weight: bold;
+  color: #5c7c52;
+  margin-bottom: 8px;
+}
+
+.invite-code {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  color: #5C7C52;
+
+  text-align: center;
+
+  background: #F7FBEF;
+  padding: 15px;
+  border-radius: 12px;
+
+  margin: 15px 0;
+}
+
+.copy-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+
+  background: #FFE28A;
+  color: #5C7C52;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.copy-button:hover {
+  transform: translateY(-2px);
+  background: #FFD75E;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.family-card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.family-card {
+  width: 100%;
+  max-width: 420px;
+}

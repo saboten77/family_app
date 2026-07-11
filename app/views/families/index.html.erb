@@ -1,15 +1,23 @@
-👨‍👩‍👧 家族管理
+<h1 class="page-title">👨‍👩‍👧 家族管理</h1>
 
-現在登録されている家族
+<% if current_user.families.any? %>
+  <% family = current_user.families.first %>
 
-──────────────
+  <div class="family-card-wrapper">
+    <div class="family-card">
+      <p class="family-title">🏠 家族名</p>
+      <p><%= family.name %></p>
 
-まだ家族はいません
+      <p class="family-title">🔑 招待コード</p>
+      <p class="invite-code"><%= family.invite_code %></p>
 
-＋ 家族を追加
+      <button class="copy-button">📋 コピーする</button>
+    </div>
+  </div>
 
-招待コードで参加
-
+<% else %>
+  <p class="no-family">まだ家族はいません</p>
+<% end %>
 
 <div class="back-button-area">
   <%= link_to "🌿 マイページへ戻る", mypage_path, class: "back-button" %>
