@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+TaskCategory.find_or_create_by!(name: "掃除")
+TaskCategory.find_or_create_by!(name: "料理")
+TaskCategory.find_or_create_by!(name: "洗濯")
+TaskCategory.find_or_create_by!(name: "買い物")
+TaskCategory.find_or_create_by!(name: "ゴミ出し")
