@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_11_025319) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_11_033510) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -36,6 +36,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_025319) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.bigint "task_category_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_category_id"], name: "index_tasks_on_task_category_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "character"
     t.datetime "created_at", null: false
@@ -55,5 +63,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_025319) do
 
   add_foreign_key "family_members", "families"
   add_foreign_key "family_members", "users"
+  add_foreign_key "tasks", "task_categories"
   add_foreign_key "users", "families"
 end
