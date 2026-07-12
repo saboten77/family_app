@@ -1,0 +1,33 @@
+<div class="task-log-page">
+
+  <h1 class="page-title">
+    🐻 家事を記録しよう
+  </h1>
+
+  <div class="task-log-card">
+
+    <%= form_with model: @task_log do |f| %>
+
+      <%= f.hidden_field :task_id %>
+
+      <div class="selected-task">
+        🧺
+        <%= @task_log.task&.name %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :completed_at, "📅 実施日" %><br>
+
+        <%= f.date_field :completed_at, class: "date-input" %>
+      </div>
+
+      <%= f.submit "🌱 記録する", class: "record-button" %>
+      
+      <div class="back-button-area">
+  <%= link_to "← 家事一覧へ戻る", tasks_path(task_category_id: @task_log.task.task_category_id), class: "back-button" %>
+  </div>
+    <% end %>
+
+  </div>
+
+</div>

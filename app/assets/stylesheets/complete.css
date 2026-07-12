@@ -1,0 +1,76 @@
+.complete-page {
+  min-height: 100vh;
+  background: #FAFAF3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.complete-card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.confetti {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.ponkichi {
+  font-size: 90px;
+  animation: bounce 1s infinite;
+}
+
+.message {
+  color: #666;
+  line-height: 1.8;
+  margin: 25px 0;
+}
+
+.point {
+  background: #DDECC8;
+  color: #4C6A37;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 16px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.home-button {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #A8C98A;
+  color: white;
+  text-decoration: none;
+
+  padding: 16px;
+
+  border-radius: 999px;
+
+  font-weight: bold;
+
+  transition: .2s;
+}
+
+.home-button:hover {
+  background: #95b879;
+}
+
+@keyframes bounce {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}

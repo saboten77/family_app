@@ -74,6 +74,15 @@
   min-height: 100px;
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  text-decoration: none;
+  color: #3E3E3E;
+   transition: 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .task-icon {

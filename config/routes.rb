@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "task_logs/new"
+  get "task_logs/create"
   get "task_categories/index"
   get "family_invites/show"
 
@@ -50,7 +52,11 @@ Rails.application.routes.draw do
   # ヘルスチェック（Render確認用）
   get "up" => "rails/health#show", as: :rails_health_check
 
-
   resources :family_invites, only: [ :show ]
   resources :task_categories, only: [:index]
+  resources :task_logs, only: [:new, :create]
+
+  resources :task_logs do
+  get :complete, on: :collection
+end
 end
