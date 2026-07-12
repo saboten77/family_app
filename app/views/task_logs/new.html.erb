@@ -12,7 +12,7 @@
 
       <div class="selected-task">
         🧺
-        <%= @task_log.task&.name %>
+        <%= @task_log.task&.name || "家事" %>
       </div>
 
       <div class="form-group">
@@ -22,10 +22,15 @@
       </div>
 
       <%= f.submit "🌱 記録する", class: "record-button" %>
-      
+
+    <% end %>
+
+    <% if @task_log.task.present? %>
       <div class="back-button-area">
-  <%= link_to "← 家事一覧へ戻る", tasks_path(task_category_id: @task_log.task.task_category_id), class: "back-button" %>
-  </div>
+        <%= link_to "← 家事一覧へ戻る",
+            tasks_path(task_category_id: @task_log.task.task_category_id),
+            class: "back-button" %>
+      </div>
     <% end %>
 
   </div>

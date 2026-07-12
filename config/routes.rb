@@ -53,8 +53,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :family_invites, only: [ :show ]
-  resources :task_categories, only: [:index]
-  resources :task_logs, only: [:new, :create]
+  resources :task_categories, only: [ :index ]
+  resources :task_logs, only: [ :new, :create ]
 
   resources :task_logs do
   get :complete, on: :collection

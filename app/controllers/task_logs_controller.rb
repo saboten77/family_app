@@ -1,5 +1,4 @@
 class TaskLogsController < ApplicationController
-
   def new
   @task_log = TaskLog.new(completed_at: Date.current)
   @tasks = Task.all
@@ -29,5 +28,4 @@ private
 def task_log_params
   params.require(:task_log).permit(:task_id, :completed_at)
 end
-
 end
