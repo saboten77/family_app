@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_11_033510) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_11_080600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -34,6 +34,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_033510) do
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "task_logs", force: :cascade do |t|
+    t.datetime "completed_at"
+    t.datetime "created_at", null: false
+    t.bigint "family_member_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["family_member_id"], name: "index_task_logs_on_family_member_id"
+    t.index ["task_id"], name: "index_task_logs_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -63,6 +73,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_033510) do
 
   add_foreign_key "family_members", "families"
   add_foreign_key "family_members", "users"
+  add_foreign_key "task_logs", "family_members"
+  add_foreign_key "task_logs", "tasks"
   add_foreign_key "tasks", "task_categories"
   add_foreign_key "users", "families"
 end
