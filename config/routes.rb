@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   resources :family_invites, only: [ :show ]
   resources :task_categories, only: [ :index ]
   resources :task_logs, only: [ :new, :create ]
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [ :show, :edit, :update ]
 
   resources :task_logs do
   get :complete, on: :collection
