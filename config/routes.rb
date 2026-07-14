@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "role_settings/edit"
   get "task_logs/new"
   get "task_logs/create"
   get "task_categories/index"
@@ -55,7 +56,7 @@ Rails.application.routes.draw do
   resources :task_categories, only: [ :index ]
   resources :task_logs, only: [ :new, :create ]
   resource :profile, only: [ :show, :edit, :update ]
-
+  resource :role_setting, only: [ :edit, :update ]
   resources :task_logs do
   get :complete, on: :collection
 end

@@ -1,0 +1,49 @@
+.family-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.setting-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #eeeeee;
+  text-align: left;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.setting-value {
+  margin: 4px 0;
+  text-align: left;
+}
+
+.setting-description {
+  color: #777;
+  font-size: 14px;
+  text-align: left;
+}
+
+.setting-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.setting-clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 28px;
+  color: #aaa;
+}

@@ -1,0 +1,125 @@
+.role-slider-container {
+  width: 100%;
+}
+
+.role-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px auto;  /* ← 左右autoで中央寄せ */
+  width: 90%;
+  max-width: 400px;   /* 大きくなりすぎ防止 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.role-name {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.role-range {
+  width: 100%;
+}
+
+.role-value {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.total-card {
+  background: #fff7d6;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.role-setting-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+
+.role-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px auto;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+.role-name {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+
+.role-range {
+  width: 100%;
+}
+
+
+.role-value {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+}
+
+.setting-description {
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.save-button-area,
+.back-button-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.save-button,
+.back-button {
+  display: inline-block;
+  width: 220px;
+  padding: 14px 0;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+
+/* 設定するボタン */
+.save-button {
+  background: #d8efc8;
+  color: #4b6b3c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b8d99d;
+}
+
+
+/* 戻るボタン */
+.back-button {
+  background: #f8f5df;
+  color: #6b6b55;
+  box-shadow: 0 4px 0 #ded8b7;
+}
+
+
+/* 押した時 */
+.save-button:active,
+.back-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 transparent;
+}
