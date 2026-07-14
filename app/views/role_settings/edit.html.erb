@@ -1,55 +1,61 @@
 <h1 class="page-title">⚖️ 役割割合設定</h1>
 
-
+<% if notice %>
+  <div class="notice-card">
+    🌱 <%= notice %>
+  </div>
+<% end %>
 <div class="role-setting-wrapper">
 
   <p class="setting-description">
     家族の支え合いバランスを設定しよう🌱
   </p>
 
+  <%= form_with url: role_setting_path, method: :patch do |f| %>
 
-  <div data-controller="role-slider">
+    <div data-controller="role-slider" class="role-slider-container">
 
-    <% @family.users.each do |user| %>
+      <% @family.family_members.each do |member| %>
 
-      <div class="role-card">
+        <div class="role-card">
 
-        <h3 class="role-name">
-          🐻 <%= user.name %>
-        </h3>
+          <h3 class="role-name">
+            🐻 <%= member.user.name %>
+          </h3>
 
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="50"
-          class="role-range"
-          data-role-slider-target="range"
-          data-action="input->role-slider#update"
-        >
+          <%= range_field_tag "roles[#{member.id}]",
+              member.role_setting.percentage,
+              min: 0,
+              max: 100,
+              class: "role-range",
+              data: {
+                role_slider_target: "range",
+                action: "input->role-slider#update"
+              }
+          %>
 
-        <span class="role-value" data-role-slider-target="value">
-          50%
-        </span>
+          <span class="role-value" data-role-slider-target="value">
+            <%= member.role_setting.percentage %>%
+          </span>
 
+        </div>
+
+      <% end %>
+
+      <div class="total-card">
+        合計 <span id="total-value">100</span>%
       </div>
 
-    <% end %>
-
-
-    <div class="total-card">
-      合計 <span id="total-value">100</span>%
     </div>
 
+    <div class="save-button-area">
+      <%= f.submit "🌱 設定する", class: "save-button" %>
+    </div>
 
-  </div>
+  <% end %>
 
 </div>
 
-
-<div class="save-button-area">
-  <%= button_tag "🌱 設定する", class: "save-button" %>
-</div>
 
 <div class="back-button-area">
   <%= link_to "🌿 家族管理へ戻る", families_path, class: "back-button" %>
