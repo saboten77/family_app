@@ -1,0 +1,56 @@
+<h1 class="page-title">⚖️ 役割割合設定</h1>
+
+
+<div class="role-setting-wrapper">
+
+  <p class="setting-description">
+    家族の支え合いバランスを設定しよう🌱
+  </p>
+
+
+  <div data-controller="role-slider">
+
+    <% @family.users.each do |user| %>
+
+      <div class="role-card">
+
+        <h3 class="role-name">
+          🐻 <%= user.name %>
+        </h3>
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="role-range"
+          data-role-slider-target="range"
+          data-action="input->role-slider#update"
+        >
+
+        <span class="role-value" data-role-slider-target="value">
+          50%
+        </span>
+
+      </div>
+
+    <% end %>
+
+
+    <div class="total-card">
+      合計 <span id="total-value">100</span>%
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="save-button-area">
+  <%= button_tag "🌱 設定する", class: "save-button" %>
+</div>
+
+<div class="back-button-area">
+  <%= link_to "🌿 家族管理へ戻る", families_path, class: "back-button" %>
+</div>

@@ -5,20 +5,72 @@
 
   <div class="family-card-wrapper">
     <div class="family-card">
-      <p class="family-title">🏠 家族名</p>
-      <p><%= family.name %></p>
 
-      <p class="family-title">🔑 招待コード</p>
-      <p class="invite-code"><%= family.invite_code %></p>
+      <!-- 家族名 -->
+      <div class="setting-item">
+        <p class="setting-title">🏠 家族名</p>
+        <p class="setting-value"><%= family.name %></p>
+      </div>
 
-      <button class="copy-button">📋 コピーする</button>
+      <!-- 家族メンバー -->
+      <div class="setting-item">
+        <p class="setting-title">👥 家族メンバー</p>
+
+        <% family.family_members.each do |member| %>
+          <p class="setting-value">
+            🐻 <%= member.user.name %>
+          </p>
+        <% end %>
+      </div>
+
+      <!-- 招待コード -->
+      <div class="setting-item">
+        <p class="setting-title">🔑 招待コード</p>
+
+        <p class="invite-code">
+          <%= family.invite_code %>
+        </p>
+
+        <button class="copy-button">
+          📋 コピーする
+        </button>
+      </div>
+
+      <!-- 役割割合 -->
+      <%= link_to edit_role_setting_path, class: "setting-link" do %>
+        <div class="setting-item setting-clickable">
+
+          <div>
+            <p class="setting-title">⚖️ 役割割合</p>
+            <p class="setting-description">
+              家事・育児の担当割合を設定します
+            </p>
+          </div>
+
+          <span class="arrow">›</span>
+
+        </div>
+      <% end %>
+
     </div>
   </div>
 
 <% else %>
-  <p class="no-family">まだ家族はいません</p>
+
+  <div class="family-card-wrapper">
+    <div class="family-card">
+      <p>まだ家族が登録されていません🏠</p>
+
+      <%= link_to "➕ 家族を作成する",
+          new_family_path,
+          class: "menu-button" %>
+    </div>
+  </div>
+
 <% end %>
 
 <div class="back-button-area">
-  <%= link_to "🌿 マイページへ戻る", mypage_path, class: "back-button" %>
+  <%= link_to "🌿 マイページへ戻る",
+      mypage_path,
+      class: "back-button" %>
 </div>
