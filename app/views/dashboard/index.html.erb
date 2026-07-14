@@ -1,17 +1,60 @@
-<header class="home-header">
-  <%= link_to "☰", mypage_path, class: "menu-button" %>
+<div class="dashboard <%= @background %>">
 
-  <h1>ポン吉</h1>
-</header>
+  <header class="home-header">
+    <%= link_to "☰", mypage_path, class: "menu-button" %>
 
-<nav class="bottom-nav">
-  <%= link_to task_categories_path, class: "nav-item" do %>
-    <div class="icon">🧺</div>
-    <div class="label">家事一覧</div>
-  <% end %>
+  </header>
 
-  <%= link_to task_histories_path, class: "nav-item" do %>
-    <div class="icon">📅</div>
-    <div class="label">家事履歴</div>
-  <% end %>
-</nav>
+  <div class="status-card">
+
+  <div class="status-label">
+
+    <span>🏠 家族エネルギー</span>
+
+    <span>🌈 ボーナス</span>
+
+  </div>
+
+  <div class="status-top">
+
+    <div class="energy-value">
+      <%= @energy.round %>%
+    </div>
+
+    <div class="bonus-value">
+      ×<%= (1 + @bonus / 100.0).round(1) %>
+    </div>
+
+  </div>
+
+  <div class="energy-bar">
+    <div
+      class="energy-fill"
+      style="width:<%= [@energy,100].min %>%;">
+    </div>
+  </div>
+
+</div>
+
+<div class="room-area">
+
+  <div class="ponkichi">
+    🐻
+  </div>
+
+</div>
+
+
+  <nav class="bottom-nav">
+    <%= link_to task_categories_path, class: "nav-item" do %>
+      <div class="icon">🧺</div>
+      <div class="label">家事一覧</div>
+    <% end %>
+
+    <%= link_to task_histories_path, class: "nav-item" do %>
+      <div class="icon">📅</div>
+      <div class="label">家事履歴</div>
+    <% end %>
+  </nav>
+
+</div>
