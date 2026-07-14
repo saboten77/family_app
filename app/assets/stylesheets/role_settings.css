@@ -123,3 +123,14 @@
   transform: translateY(4px);
   box-shadow: 0 0 0 transparent;
 }
+
+.notice-card {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #f3f9e8;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+}

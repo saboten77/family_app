@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_11_080600) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_14_042004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -28,6 +28,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_080600) do
     t.bigint "user_id", null: false
     t.index ["family_id"], name: "index_family_members_on_family_id"
     t.index ["user_id"], name: "index_family_members_on_user_id"
+  end
+
+  create_table "role_settings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "family_member_id", null: false
+    t.integer "percentage", default: 50, null: false
+    t.datetime "updated_at", null: false
+    t.index ["family_member_id"], name: "index_role_settings_on_family_member_id"
   end
 
   create_table "task_categories", force: :cascade do |t|
@@ -73,6 +81,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_11_080600) do
 
   add_foreign_key "family_members", "families"
   add_foreign_key "family_members", "users"
+  add_foreign_key "role_settings", "family_members"
   add_foreign_key "task_logs", "family_members"
   add_foreign_key "task_logs", "tasks"
   add_foreign_key "tasks", "task_categories"
