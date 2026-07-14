@@ -1,23 +1,28 @@
 <div class="account-page">
 
-<h1>プロフィール変更</h1>
+  <div class="profile-card">
 
-<div class="profile-card">
+    <h1>プロフィール変更</h1>
 
-<p>🐹 キャラクター</p>
+    <%= form_with model: @user, url: profile_path, method: :patch do |f| %>
 
-<button>ポン吉</button>
+      <p>🐹 キャラクター</p>
 
-<br><br>
+      <button type="button">ポン吉</button>
 
-<label>ニックネーム</label>
+      <br><br>
 
-<input type="text" placeholder="友希">
+      <div class="field">
+        <%= f.label :name, "ニックネーム" %><br>
+        <%= f.text_field :name, placeholder: "友希" %>
+      </div>
 
-<br><br>
+      <br>
 
-<button>保存</button>
+      <%= f.submit "保存", class: "save-button" %>
 
-</div>
+    <% end %>
+
+  </div>
 
 </div>

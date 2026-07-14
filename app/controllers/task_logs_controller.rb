@@ -23,6 +23,10 @@ class TaskLogsController < ApplicationController
   def complete
   end
 
+  def index
+    @task_logs = TaskLog.includes(:task, :family_member).order(created_at: :desc)
+  end
+
 private
 
 def task_log_params
