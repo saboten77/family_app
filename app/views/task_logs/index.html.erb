@@ -1,7 +1,7 @@
 <div class="task-log-page">
 
   <h1 class="page-title">
-    📖 家事履歴
+    🏡 家族の家事記録
   </h1>
 
   <div class="task-log-list">
@@ -10,19 +10,19 @@
 
       <div class="task-log-card">
 
-        <div>
+        <div class="task-log-task">
           🧺 <%= log.task.name %>
         </div>
 
-        <div>
+        <div class="task-log-info">
           👤 <%= log.family_member.user.name %>
         </div>
 
-        <div>
+        <div class="task-log-date">
           📅 <%= log.completed_at.strftime("%Y年%m月%d日") %>
         </div>
 
-        <div>
+        <div class="task-log-point">
           🌱 +1pt
         </div>
 
