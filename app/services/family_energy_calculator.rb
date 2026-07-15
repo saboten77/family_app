@@ -1,5 +1,4 @@
 class FamilyEnergyCalculator
-
   TARGET_TASKS_PER_DAY = 11
   TASK_ENERGY = 60
 
@@ -26,7 +25,7 @@ class FamilyEnergyCalculator
 
     energy = task_count.to_f / TARGET_TASKS_PER_DAY * TASK_ENERGY
 
-    [energy, TASK_ENERGY].min
+    [ energy, TASK_ENERGY ].min
   end
 
   def today_task_logs
@@ -36,7 +35,4 @@ class FamilyEnergyCalculator
              log.completed_at.to_date == Date.current
            end
   end
-
-  
-
 end
