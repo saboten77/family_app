@@ -9,6 +9,16 @@ class DashboardController < ApplicationController
     @energy = calculator.call
     @bonus = calculator.role_bonus
 
-    @background = "energy_high"
+    @background =
+  case @energy
+  when 0...25
+    "background4"
+  when 25...50
+    "background3"
+  when 50...75
+    "background2"
+  else
+    "background1"
+  end
   end
 end
