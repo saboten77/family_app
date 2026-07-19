@@ -10,41 +10,20 @@
       ニックネームを決めよう！
     </p>
 
-    <%= form_with model: @user, url: profile_path do |f| %>
+    <%= form_with model: @user, url: profile_path, method: :patch do |f| %>
 
-      <h3>キャラクターを選んでください</h3>
+      <h3>キャラクター</h3>
 
-      <div class="character-grid">
+<div class="selected-character">
+  <%= image_tag "characters/#{@user.character || 'character1'}.png",
+                class: "profile-character" %>
+</div>
 
-        <label class="character-card">
-          <%= f.radio_button :character, "A" %>
-          <div class="character-image">🐻</div>
-          <p>A</p>
-        </label>
-
-        <label class="character-card">
-          <%= f.radio_button :character, "B" %>
-          <div class="character-image">🐰</div>
-          <p>B</p>
-        </label>
-
-        <label class="character-card">
-          <%= f.radio_button :character, "C" %>
-          <div class="character-image">🦊</div>
-          <p>C</p>
-        </label>
-
-        <label class="character-card">
-          <%= f.radio_button :character, "D" %>
-          <div class="character-image">🐼</div>
-          <p>D</p>
-        </label>
-
-      </div>
+<%= link_to "変更する", profile_select_character_path, class: "change-character-btn" %>
 
       <div class="field">
-        <%= f.label :nickname, "ニックネーム" %>
-        <%= f.text_field :nickname, placeholder: "ポン吉" %>
+        <%= f.label :name, "ニックネーム" %>
+        <%= f.text_field :name, placeholder: "ポン吉" %>
       </div>
 
       <%= f.submit "次へ", class: "next-btn" %>

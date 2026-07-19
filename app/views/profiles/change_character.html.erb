@@ -1,0 +1,68 @@
+<div class="character-select">
+
+  <h1>キャラクターを変更しよう！</h1>
+
+  <p class="description">
+    新しいキャラを選んでね♪
+  </p>
+
+  <div class="character-grid">
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character1" %>
+
+      <button type="submit" class="character-card yellow">
+        <%= image_tag "characters/character1.png", class: "character-image" %>
+      </button>
+    <% end %>
+
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character2" %>
+
+      <button type="submit" class="character-card pink">
+        <%= image_tag "characters/character2.png", class: "character-image" %>
+      </button>
+    <% end %>
+
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character3" %>
+
+      <button type="submit" class="character-card green">
+        <%= image_tag "characters/character3.png", class: "character-image" %>
+      </button>
+    <% end %>
+
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character4" %>
+
+      <button type="submit" class="character-card orange">
+        <%= image_tag "characters/character4.png", class: "character-image character4" %>
+      </button>
+    <% end %>
+
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character5" %>
+
+      <button type="submit" class="character-card purple">
+        <%= image_tag "characters/character5.png", class: "character-image" %>
+      </button>
+    <% end %>
+
+
+    <%= form_with url: profile_change_character_path, method: :patch do %>
+      <%= hidden_field_tag :character, "character6" %>
+
+      <button type="submit" class="character-card mint">
+        <%= image_tag "characters/character6.png", class: "character-image" %>
+      </button>
+    <% end %>
+
+  </div>
+
+</div>
+
+<%= link_to "🏠 プロフィールへ戻る", edit_profile_path, class: "back-link" %>
