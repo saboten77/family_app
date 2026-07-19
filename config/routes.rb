@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # プロフィール変更
   get "account/profile", to: "accounts#edit_profile"
   patch "/account/profile", to: "accounts#update_profile", as: :update_account_profile
-  
+
   get "profile/select_character", to: "profiles#select_character"
   patch "profile/select_character", to: "profiles#select_character"
 

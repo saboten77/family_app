@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
     @user = current_user
   end
 end
- 
+
   def profile_params
   params.require(:user).permit(:name)
   end
