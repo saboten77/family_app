@@ -2,14 +2,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
 }
 
+/* 共通 */
 .dashboard {
-  height: 100dvh;
-  min-height: 0;
-  overflow: hidden;
+  min-height: 100vh;
 
   padding: 20px;
   box-sizing: border-box;
@@ -20,6 +17,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* スマホだけ */
+@media (max-width: 768px) {
+  .dashboard {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
 }
 
 .dashboard.background1 {

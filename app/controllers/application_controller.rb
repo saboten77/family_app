@@ -8,11 +8,13 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if resource.families.exists?
-      dashboard_path
-    else
-      new_family_path
-    end
+  if resource.name.blank?
+    edit_profile_path
+  elsif resource.families.exists?
+    dashboard_path
+  else
+    new_family_path
+  end
   end
 
   protected

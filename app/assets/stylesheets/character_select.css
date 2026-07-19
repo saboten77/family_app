@@ -1,0 +1,139 @@
+.character-select {
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.character-select h1 {
+  color: #4f6b3c;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* 3列に並べる */
+.character-grid {
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+/* 丸 */
+.character-card {
+  width: 110px;
+  height: 110px;
+
+  padding: 0;
+  margin: 0;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  border: 4px solid white;
+  cursor: pointer;
+}
+
+/* マウスを乗せたら少し大きく */
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+/* キャラクター画像 */
+.character-image {
+  width: 105px;
+  height: auto;
+}
+
+/* ボタン */
+.select-button {
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #8bc34a;
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* キャラクターごとの背景色 */
+.yellow {
+  background: #FFF5BF;
+}
+
+.pink {
+  background: #FFE3EA;
+}
+
+.green {
+  background: #E7F5D8;
+}
+
+.orange {
+  background: #FFE8C6;
+}
+
+.purple {
+  background: #EEE2FF;
+}
+
+.mint {
+  background: #E5F8E8;
+}
+
+.character4 {
+  transform: translateY(10px);
+}
+
+.back-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+
+  margin: 18px auto 40px;
+  padding: 10px 18px;
+
+  background: #ffffff;
+  color: #4f6b3c;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+
+  border-radius: 999px;
+  border: 2px solid #dfeccf;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: #f6fbef;
+  transform: translateY(-2px);
+}

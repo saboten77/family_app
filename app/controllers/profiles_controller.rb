@@ -9,12 +9,28 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update(profile_params)
-      redirect_to mypage_path, notice: "プロフィールを更新しました🌱"
-    else
-      render :edit, status: :unprocessable_entity
+  if @user.update(profile_params)
+    redirect_to account_profile_path, notice: "プロフィールを更新しました🌱"
+  else
+    render :edit, status: :unprocessable_entity
+  end
+  end
+
+  def select_character
+    if request.patch?
+      if @user.update(character: params[:character])
+        redirect_to new_family_path, notice: "キャラクターを設定しました🐾"
+      end
     end
   end
+
+  def change_character
+  if request.patch?
+    if @user.update(character: params[:character])
+      redirect_to account_profile_path, notice: "キャラクターを変更しました🐾"
+    end
+  end
+end
 
   private
 
@@ -23,6 +39,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :character)
   end
 end

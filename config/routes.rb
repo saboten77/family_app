@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get "characters/select"
+  get "characters/show"
   get "role_settings/edit"
   get "task_logs/new"
   get "task_logs/create"
   get "task_categories/index"
   get "family_invites/show"
+  get "profile/change_character", to: "profiles#change_character"
+  patch "profile/change_character", to: "profiles#change_character"
 
   # ユーザー認証（Devise）
   devise_for :users
@@ -28,6 +32,10 @@ Rails.application.routes.draw do
 
   # プロフィール変更
   get "account/profile", to: "accounts#edit_profile"
+  patch "/account/profile", to: "accounts#update_profile", as: :update_account_profile
+  
+  get "profile/select_character", to: "profiles#select_character"
+  patch "profile/select_character", to: "profiles#select_character"
 
   # メールアドレス変更
   get "account/email", to: "accounts#edit_email"
