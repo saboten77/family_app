@@ -57,11 +57,19 @@ body {
   gap: 20px;
 }
 
-.ponkichi-area {
-  height: 300px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.room-area {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+.ponkichi {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.ponkichi-image {
+  width: 140px;
 }
 
 .energy-area {

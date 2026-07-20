@@ -38,17 +38,27 @@
 
 <div class="room-area">
 
-  <div class="ponkichi">
-    🐻
+  <% @characters.each do |character| %>
+
+  <div class="ponkichi"
+       style="
+         left:<%= character[:position][:left] %>;
+         top:<%= character[:position][:top] %>;
+       ">
+
+    <%= image_tag character[:image],
+          class: "ponkichi-image" %>
+
   </div>
 
-</div>
+<% end %>
 
+</div>
 
   <nav class="bottom-nav">
     <%= link_to task_categories_path, class: "nav-item" do %>
       <div class="icon">🧺</div>
-      <div class="label">家事一覧</div>
+      <div class="label">家事記録</div>
     <% end %>
 
     <%= link_to task_histories_path, class: "nav-item" do %>
