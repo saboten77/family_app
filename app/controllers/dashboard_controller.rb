@@ -37,7 +37,6 @@ class DashboardController < ApplicationController
 
 
 @family_members.each_with_index do |member, index|
-
   last_task_log = member.task_logs.order(created_at: :desc).first
 
   if last_task_log && last_task_log.created_at > 1.hour.ago
@@ -51,7 +50,6 @@ class DashboardController < ApplicationController
     image: image,
     position: positions[index]
   }
-
   end
   end
 end
