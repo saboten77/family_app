@@ -1,35 +1,50 @@
 body {
-  background-color: #f8f9e8;
   margin: 0;
+  background-color: #f8f9e8;
   font-family: "Yu Gothic", sans-serif;
 }
+
+/* =========================
+   マイページ全体
+========================= */
 
 .mypage {
   max-width: 420px;
   margin: 0 auto;
   padding: 24px 20px 100px;
+  box-sizing: border-box;
 }
 
 .page-title {
   text-align: center;
+  margin: 24px 0;
   color: #4f6b3c;
-  margin-bottom: 24px;
   font-size: 28px;
 }
 
+/* =========================
+   プロフィールカード
+========================= */
+
 .profile-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
   margin-bottom: 24px;
+  padding: 24px;
+
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .character {
   font-size: 60px;
+  flex-shrink: 0;
 }
 
 .profile-info {
@@ -48,10 +63,29 @@ body {
   font-size: 15px;
 }
 
+.profile-character {
+  width: 90px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .profile-character {
+    width: 75px;
+  }
+}
+
+/* =========================
+   メニューカード
+========================= */
+
 .menu-card {
-  background: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #fff;
   border-radius: 20px;
   overflow: hidden;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -59,11 +93,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-decoration: none;
-  color: #444;
+
   padding: 18px 20px;
+
+  color: #444;
+  text-decoration: none;
+
   border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s;
+
+  transition: background-color .2s;
 }
 
 .menu-card a:last-child {
@@ -71,7 +109,7 @@ body {
 }
 
 .menu-card a:hover {
-  background-color: #f7fbe8;
+  background: #f7fbe8;
 }
 
 .menu-card span {
@@ -85,75 +123,50 @@ body {
 }
 
 /* =========================
-   マイページ共通
+   戻るボタン
 ========================= */
 
-.page-title {
-  text-align: center;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  color: #4f6b3c;
-}
-
-.menu-card {
-  width: 90%;
-  max-width: 420px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.menu-card a {
+.back-button-area {
   display: flex;
-  align-items: center;
-  padding: 18px;
-  color: #3E3E3E;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
-  font-size: 16px;
-}
-
-.menu-card a:last-child {
-  border-bottom: none;
-}
-
-.menu-card a:hover {
-  background: #F8FBEF;
-}
-
-.account-page {
-  padding: 20px;
-}
-
-.profile-card {
-  width: 90%;
-  max-width: 420px;
-  margin: 20px auto;
-  padding: 24px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .back-button {
-  display: inline-block;
-  padding: 12px 22px;
-  margin: 30px auto;
-  background: var(--pon-light-green);
-  color: var(--pon-text);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px 24px;
+  min-width: 180px;
+
   text-decoration: none;
   border-radius: 999px;
-  font-weight: bold;
-  transition: 0.2s;
 }
 
-.back-button:hover {
-  background: var(--pon-accent);
-  color: white;
-}
+/* =========================
+   スマホ微調整
+========================= */
 
-.back-button-area {
-  text-align: center;
+@media (max-width: 480px) {
+  .mypage {
+    padding: 20px 16px 90px;
+  }
+
+  .profile-card {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .character {
+    font-size: 52px;
+  }
+
+  .user-name {
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
 }

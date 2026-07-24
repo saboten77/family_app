@@ -22,11 +22,14 @@ class DashboardController < ApplicationController
       end
 
     positions = [
-  { left: "25%", top: "60%" },
-  { left: "50%", top: "65%" },
-  { left: "75%", top: "60%" },
-  { left: "35%", top: "45%" },
-  { left: "65%", top: "45%" }
+  { left: "12%", top: "72%" },
+  { left: "28%", top: "58%" },
+  { left: "50%", top: "72%" },
+  { left: "72%", top: "58%" },
+  { left: "88%", top: "72%" },
+  { left: "18%", top: "40%" },
+  { left: "50%", top: "32%" },
+  { left: "82%", top: "40%" }
 ].shuffle
 
 

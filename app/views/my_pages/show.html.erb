@@ -1,11 +1,11 @@
-<%= link_to "← ホームに戻る", dashboard_path, class: "back-button" %>
 <div class="mypage">
   <h1 class="page-title">マイページ</h1>
 
   <div class="profile-card">
     <div class="character">
-      🐹
-    </div>
+  <%= image_tag "chara/#{current_user.character || 'character1'}_sleeping.png",
+      class: "profile-character" %>
+  </div>
 
     <div class="profile-info">
       <h2 class="user-name"><%= current_user.name %>さん</h2>
@@ -14,7 +14,7 @@
         今日もぼちぼちいこか〜🌿
       </p>
     </div>
-  </div>
+    </div>
 
   <div class="menu-card">
 
@@ -32,4 +32,12 @@
       data: { turbo_method: :delete } %>
 
   </div>
+  <div class="back-button-area">
+  <%= link_to "🏠 ホームに戻る",
+      dashboard_path,
+      class: "back-button" %>
 </div>
+</div>
+</div>
+
+
