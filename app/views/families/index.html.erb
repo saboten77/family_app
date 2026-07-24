@@ -27,12 +27,13 @@
       <div class="setting-item">
         <p class="setting-title">🔑 招待コード</p>
 
-        <p class="invite-code">
-          <%= family.invite_code %>
+        <p class="invite-code" id="invite-code">
+        <%= family.invite_code %>
         </p>
 
-        <button class="copy-button">
-          📋 コピーする
+        <button class="copy-button" onclick="copyInviteCode()">
+       📋 コピーする
+        </button>
         </button>
       </div>
 
