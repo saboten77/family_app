@@ -21,7 +21,6 @@ class DashboardController < ApplicationController
         "background1"
       end
 
-  
   positions = [
   { left: "35%", top: "68%" }, # 左
   { left: "50%", top: "50%" }, # 真ん中
@@ -42,7 +41,6 @@ class DashboardController < ApplicationController
   else
     image = "chara/#{member.user.character || 'character1'}_sleeping.png"
   end
-
 
   @characters << {
     image: image,
