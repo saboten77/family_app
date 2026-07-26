@@ -17,11 +17,12 @@ class ProfilesController < ApplicationController
   end
 
   def select_character
-    if request.patch?
-      if @user.update(character: params[:character])
-        redirect_to new_family_path, notice: "キャラクターを設定しました🐾"
-      end
+  if request.patch?
+    if @user.update(character: params[:character])
+      redirect_to profile_select_character_path,
+                  notice: "キャラクターを設定しました🐾"
     end
+  end
   end
 
   def change_character

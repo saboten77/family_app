@@ -21,20 +21,15 @@ class DashboardController < ApplicationController
         "background1"
       end
 
-    positions = [
-  { left: "12%", top: "72%" },
-  { left: "28%", top: "58%" },
-  { left: "50%", top: "72%" },
-  { left: "72%", top: "58%" },
-  { left: "88%", top: "72%" },
-  { left: "18%", top: "40%" },
-  { left: "50%", top: "32%" },
-  { left: "82%", top: "40%" }
+  
+  positions = [
+  { left: "35%", top: "68%" }, # 左
+  { left: "50%", top: "50%" }, # 真ん中
+  { left: "65%", top: "68%" }, # 右
+  { left: "50%", top: "30%" }  # 上
 ].shuffle
 
-
 @characters = []
-
 
 @family_members = @family.family_members.includes(:user)
 

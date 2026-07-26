@@ -76,4 +76,99 @@
   background: #EDE8B8;
 }
 
- /* 履歴のページ
+.date-header {
+  max-width: 380px;
+  margin: 24px auto 12px;
+  padding-bottom: 8px;
+
+  border-bottom: 2px solid #d8efb6;
+
+  color: #4f6b3c;
+  font-size: 18px;
+  font-weight: bold;
+
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.task-log-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #ececec;
+}
+
+.task-log-row:last-child {
+  border-bottom: none;
+}
+
+.task-info {
+  text-align: left;
+}
+
+.task-info small {
+  color: #777;
+}
+
+.task-point {
+  font-weight: bold;
+  color: #6aa84f;
+}
+
+.pagination-area {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.pagination-area {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination a,
+.pagination span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #F5F9EB;
+  color: #4F6B3C;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,.08);
+
+  transition: .2s;
+}
+
+.pagination a:hover {
+  background: #DDECC8;
+  transform: translateY(-2px);
+}
+
+.pagination .current {
+  background: #9CCB72;
+  color: white;
+}
+
+.pagination .gap {
+  background: transparent;
+  box-shadow: none;
+}
