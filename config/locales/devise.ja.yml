@@ -18,3 +18,4 @@ ja:
         forgot_your_password: "パスワードを忘れた？"
     failure:
       invalid: "メールアドレスかパスワードが違います"
+      

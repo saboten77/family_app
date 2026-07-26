@@ -6,35 +6,45 @@
 
   <div class="task-log-list">
 
-    <% @task_logs.each do |log| %>
+    <% @task_logs.group_by { |log| log.completed_at.to_date }.each do |date, logs| %>
+
+      <h2 class="date-header">
+        📅 <%= date.strftime("%Y年%m月%d日") %>
+      </h2>
 
       <div class="task-log-card">
 
-        <div>
-          🧺 <%= log.task.name %>
-        </div>
+        <% logs.each do |log| %>
 
-        <div>
-          👤 <%= log.family_member.user.name %>
-        </div>
+          <div class="task-log-row">
 
-        <div>
-          📅 <%= log.completed_at.strftime("%Y年%m月%d日") %>
-        </div>
+            <div class="task-info">
+              <div>🧺 <%= log.task.name %></div>
+              <small>👤 <%= log.family_member.user.name %></small>
+            </div>
 
-        <div>
-          🌱 +1pt
-        </div>
+            <div class="task-point">
+              🌱 +1pt
+            </div>
+
+          </div>
+
+        <% end %>
 
       </div>
 
     <% end %>
 
   </div>
-<div class="dashboard-back">
-  <%= link_to dashboard_path, class: "back-home-button" do %>
-    🏠 ポン吉のお家へ戻る
-  <% end %>
+
+  <div class="dashboard-back">
+    <%= link_to dashboard_path, class: "back-home-button" do %>
+      🏠 ポン吉のお家へ戻る
+    <% end %>
+  </div>
+
 </div>
 
+<div class="pagination-area">
+  <%= paginate @task_logs %>
 </div>
