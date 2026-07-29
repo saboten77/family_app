@@ -39,9 +39,13 @@ Rails.application.routes.draw do
 
   # メールアドレス変更
   get "account/email", to: "accounts#edit_email"
+  patch "/account/email",
+  to: "accounts#update_email",
+  as: :update_account_email
 
   # パスワード変更
   get "account/password", to: "accounts#edit_password"
+  patch "account/password", to: "accounts#update_password", as: :update_account_password
 
   # 家族管理
   resources :families, only: [ :index, :new, :create ]

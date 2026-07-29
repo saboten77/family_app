@@ -1,0 +1,19 @@
+ja:
+  errors:
+    messages:
+      not_saved: "保存できませんでした"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "を入力してください"
+
+    attributes:
+      user:
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        

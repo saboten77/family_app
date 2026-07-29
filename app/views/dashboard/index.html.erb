@@ -9,23 +9,33 @@
 
   <div class="status-label">
 
-    <span>🏠 家族エネルギー</span>
-
-    <span>🌈 ボーナス</span>
-
   </div>
 
   <div class="status-top">
 
-    <div class="energy-value">
-      <%= @energy.round %>%
+  <div class="energy-title">
+  🏠 家族エネルギー
+  </div>
+
+  <div class="energy-value">
+  <%= @energy.round %><span>%</span>
+  </div>
+
+  <div class="bonus-value">
+
+    <div>
+      🤝 家族協力
+      +<%= @bonus_info[:family_bonus] %>
     </div>
 
-    <div class="bonus-value">
-      ×<%= (1 + @bonus / 100.0).round(1) %>
+    <div>
+      ⚖️ 役割ボーナス
+      +<%= @bonus_info[:role_bonus] %>
     </div>
 
   </div>
+
+</div>
 
   <div class="energy-bar">
     <div

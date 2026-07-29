@@ -170,3 +170,27 @@ body {
     font-size: 14px;
   }
 }
+
+.submit-button {
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #f6c85f;
+  color: #5b4636;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}

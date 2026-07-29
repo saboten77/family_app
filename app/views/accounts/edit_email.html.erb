@@ -1,5 +1,47 @@
-<h1>メールアドレス変更</h1>
+<div class="entry-wrapper">
 
-<input type="email" placeholder="sample@example.com">
+  <div class="entry-box">
 
-<button>変更する</button>
+    <h2>📮 メールアドレス変更</h2>
+
+    <p class="sub-text">
+      新しいメールアドレスを設定してね🌱
+    </p>
+
+
+    <%= form_for(@user,
+      url: update_account_email_path,
+      html: { method: :patch }) do |f| %>
+
+
+      <%= render "devise/shared/error_messages", resource: @user %>
+
+
+      <div class="field">
+
+        <%= f.label :email, "新しいメールアドレス" %>
+
+        <%= f.email_field :email,
+          placeholder: "sample@example.com" %>
+
+      </div>
+
+
+      <div class="actions">
+
+        <%= f.submit "📮 変更する",
+          class: "submit-button" %>
+
+      </div>
+
+
+    <% end %>
+
+
+    <div class="back-button-area">
+    <%= link_to "🌿 マイページへ戻る", mypage_path, class: "back-button" %>
+    </div>
+
+  </div>
+
+</div>

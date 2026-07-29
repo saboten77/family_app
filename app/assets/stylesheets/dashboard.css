@@ -148,9 +148,7 @@ body {
 
 .status-top {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-direction: column;
 }
 
 .status-label {
