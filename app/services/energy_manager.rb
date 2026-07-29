@@ -12,7 +12,7 @@ class EnergyManager
     energy += TASK_ENERGY
 
     @family.update!(
-      energy: [energy, 100].min
+      energy: [ energy, 100 ].min
     )
   end
 
@@ -24,7 +24,7 @@ class EnergyManager
   energy += role_bonus
   energy -= 10
 
-  energy = [[energy, 0].max, 100].min
+  energy = [ [ energy, 0 ].max, 100 ].min
 
   unless @family.update(energy: energy)
     puts @family.errors.full_messages
@@ -53,9 +53,9 @@ end
     30
   when 50..66
     20
-    else
+  else
     0
-    end
+  end
   end
 
   def role_bonus

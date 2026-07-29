@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     @family = current_user.families.first
 
     manager = EnergyManager.new(@family)
-    
+
     @energy = @family.energy
     @bonus_info = manager.bonus_info
 
