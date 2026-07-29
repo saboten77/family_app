@@ -1,4 +1,6 @@
 class TaskLogsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @task_log = TaskLog.new(completed_at: Date.current)
     @tasks = Task.all
@@ -13,6 +15,11 @@ class TaskLogsController < ApplicationController
     @task_log.family_member = current_user.family_members.first
 
     if @task_log.save
+      family = current_user.families.first
+
+      # 家事1件につきエネルギーを加算
+      EnergyManager.new(family).add_task_energy
+
       redirect_to complete_task_logs_path
     else
       @tasks = Task.all
