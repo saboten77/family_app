@@ -4,7 +4,6 @@ require "rails/test_help"
 
 module ActiveSupport
   class TestCase
-
     # Deviseのログインヘルパーを利用可能にする
     include Devise::Test::IntegrationHelpers
 
