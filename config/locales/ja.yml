@@ -10,10 +10,13 @@ ja:
           attributes:
             current_password:
               blank: "を入力してください"
+            email:
+              blank: "を入力してください"
+              taken: "はすでに使用されています"
 
     attributes:
       user:
         current_password: "現在のパスワード"
+        email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
-        
