@@ -122,10 +122,12 @@ end
 end
 
   def today_task_logs
-    @family.family_members
-           .flat_map(&:task_logs)
-           .select do |log|
-             log.completed_at.to_date == Date.current
-           end
+  @family.family_members
+         .includes(:role_setting, :task_logs)
+         .flat_map(&:task_logs)
+         .select do |log|
+           log.completed_at.to_date == Date.current
+         end
   end
+
 end
