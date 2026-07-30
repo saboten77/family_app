@@ -129,5 +129,4 @@ end
            log.completed_at.to_date == Date.current
          end
   end
-
 end
