@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "family_invites/show"
   get "profile/change_character", to: "profiles#change_character"
   patch "profile/change_character", to: "profiles#change_character"
+  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # ユーザー認証（Devise）
   devise_for :users
