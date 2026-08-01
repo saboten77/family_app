@@ -2,12 +2,13 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @family = current_user.families.first
+  @family = current_user.families.first
 
-    manager = EnergyManager.new(@family)
+  manager = EnergyManager.new(@family)
+  manager.daily_update
 
-    @energy = @family.energy
-    @bonus_info = manager.bonus_info
+  @energy = @family.reload.energy
+  @bonus_info = manager.bonus_info
 
     @background =
       case @energy
