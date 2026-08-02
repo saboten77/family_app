@@ -10,6 +10,14 @@
     </p>
 
     <%= form_with model: @family do |f| %>
+      
+      <% if @family.errors.any? %>
+      <div class="error-messages">
+      <% @family.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+      <% end %>
+      </div>
+      <% end %>
 
       <div class="field">
         <%= f.label :name, "家族名" %>

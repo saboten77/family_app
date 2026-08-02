@@ -12,6 +12,12 @@
 
     <%= form_with url: family_joins_path do %>
 
+    <% if flash[:alert] %>
+    <div class="error-messages">
+    <p><%= flash[:alert] %></p>
+    </div>
+    <% end %>
+
       <div class="field">
         <%= label_tag :invite_code, "招待コード" %>
         <%= text_field_tag :invite_code %>

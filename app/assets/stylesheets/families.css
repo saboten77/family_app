@@ -236,3 +236,17 @@
   width: 100%;
   max-width: 420px;
 }
+
+.error-messages {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #fff0f0;
+  color: #d9534f;
+  font-size: 14px;
+  text-align: left;
+}
+
+.error-messages p {
+  margin: 0;
+}
