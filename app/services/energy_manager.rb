@@ -93,7 +93,7 @@ class EnergyManager
   # 今日の家事記録を取得
   def today_task_logs
     @family.family_members
-           .includes(:task_logs, :role_setting)
+           .includes(:task_logs)
            .flat_map(&:task_logs)
            .select do |log|
              log.completed_at.to_date == Date.current

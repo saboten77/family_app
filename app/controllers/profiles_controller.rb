@@ -9,29 +9,30 @@ class ProfilesController < ApplicationController
   end
 
   def update
-  if @user.update(profile_params)
-    redirect_to account_profile_path, notice: "プロフィールを更新しました🌱"
-  else
-    render :edit, status: :unprocessable_entity
-  end
+    if @user.update(profile_params)
+      redirect_to new_family_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def select_character
-  if request.patch?
-    if @user.update(character: params[:character])
-      redirect_to profile_select_character_path,
-                  notice: "キャラクターを設定しました🐾"
+    if request.patch?
+      if @user.update(character: params[:character])
+        redirect_to edit_profile_path,
+                    notice: "キャラクターを設定しました🐾"
+      end
     end
-  end
   end
 
   def change_character
-  if request.patch?
-    if @user.update(character: params[:character])
-      redirect_to account_profile_path, notice: "キャラクターを変更しました🐾"
+    if request.patch?
+      if @user.update(character: params[:character])
+        redirect_to account_profile_path,
+                    notice: "キャラクターを変更しました🐾"
+      end
     end
   end
-end
 
   private
 

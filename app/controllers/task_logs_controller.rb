@@ -19,6 +19,7 @@ class TaskLogsController < ApplicationController
 
       # 家事1件につきエネルギーを加算
       EnergyManager.new(family).add_task_energy
+      current_user.increment!(:points)
 
       redirect_to complete_task_logs_path
     else
