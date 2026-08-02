@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "profile/change_character", to: "profiles#change_character"
   patch "profile/change_character", to: "profiles#change_character"
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+  patch "profile/setup", to: "profiles#setup"
 
   # ユーザー認証（Devise）
   devise_for :users
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
   get "account", to: "accounts#show"
 
   # プロフィール変更
-  get "account/profile", to: "accounts#edit_profile"
+  get "account/profile", to: "profiles#edit"
   patch "/account/profile", to: "accounts#update_profile", as: :update_account_profile
 
   get "profile/select_character", to: "profiles#select_character"
