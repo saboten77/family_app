@@ -4,6 +4,14 @@ class DashboardController < ApplicationController
   def index
   @family = current_user.families.first
 
+   unless @family
+    redirect_to new_family_path, alert: "まず家族を作成してください🐹"
+    return
+   end
+
+  manager = EnergyManager.new(@family)
+  manager.daily_update
+
   manager = EnergyManager.new(@family)
   manager.daily_update
 

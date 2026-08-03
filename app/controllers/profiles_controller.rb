@@ -9,11 +9,17 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update(profile_params)
-      redirect_to new_family_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+  if profile_params[:name].blank?
+    @user.errors.add(:name, "を入力してください")
+    render :edit, status: :unprocessable_entity
+    return
+  end
+
+  if @user.update(profile_params)
+    redirect_to new_family_path
+  else
+    render :edit, status: :unprocessable_entity
+  end
   end
 
   def select_character

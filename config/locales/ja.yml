@@ -15,6 +15,10 @@ ja:
             email:
               blank: "を入力してください"
               taken: "はすでに使用されています"
+            password:
+              blank: "を入力してください"
+            password_confirmation:
+              blank: "を入力してください"
 
         family:
           attributes:
@@ -31,4 +35,21 @@ ja:
 
       family:
         name: "家族名"
-        
+
+  devise:
+    failure:
+      invalid: "メールアドレスまたはパスワードが正しくありません"
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません"
+    user:
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません"
+      unauthenticated: "ログインしてください"
+      already_authenticated: "すでにログインしています"
+
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+
+    registrations:
+      signed_up: "アカウントを作成しました"
+      updated: "アカウント情報を更新しました"
+      destroyed: "アカウントを削除しました"

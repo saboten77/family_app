@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_01_141603) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_02_082240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -31,6 +31,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_01_141603) do
     t.bigint "user_id", null: false
     t.index ["family_id"], name: "index_family_members_on_family_id"
     t.index ["user_id"], name: "index_family_members_on_user_id"
+  end
+
+  create_table "reward_cards", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "image", null: false
+    t.string "name", null: false
+    t.string "rarity", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "role_settings", force: :cascade do |t|
@@ -65,6 +73,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_01_141603) do
     t.index ["task_category_id"], name: "index_tasks_on_task_category_id"
   end
 
+  create_table "user_reward_cards", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "quantity", default: 1, null: false
+    t.bigint "reward_card_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["reward_card_id"], name: "index_user_reward_cards_on_reward_card_id"
+    t.index ["user_id"], name: "index_user_reward_cards_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "character"
     t.datetime "created_at", null: false
@@ -89,5 +107,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_01_141603) do
   add_foreign_key "task_logs", "family_members"
   add_foreign_key "task_logs", "tasks"
   add_foreign_key "tasks", "task_categories"
+  add_foreign_key "user_reward_cards", "reward_cards"
+  add_foreign_key "user_reward_cards", "users"
   add_foreign_key "users", "families"
 end
