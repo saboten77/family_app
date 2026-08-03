@@ -1,0 +1,57 @@
+
+<%= stylesheet_link_tag "gacha", "data-turbo-track": "reload" %>
+
+<div class="gacha-container">
+
+  <div class="gacha-card">
+
+    <h1>🎁 ご褒美ガチャ</h1>
+
+    <div class="points-display">
+      💰 <%= current_user.points %> ポイント
+    </div>
+
+    <% if @reward_card %>
+
+      <div class="gacha-animation">
+        <%= video_tag "gacha.mp4",
+          autoplay: true,
+          controls: false,
+          muted: true,
+          playsinline: true,
+          class: "gacha-video",
+          id: "gacha-video" %>
+      </div>
+
+    <div class="reward-result" id="reward-result" style="display: none;">
+    <h2>🎉 ゲット！</h2>
+
+    <%= image_tag "reward_cards/#{@reward_card.image}",
+    class: "reward-card-image" %>
+
+    <p><%= @reward_card.name %></p>
+    <p><%= @reward_card.rarity %></p>
+    </div>
+
+    <% else %>
+
+      <div class="gacha-machine">
+        <%= image_tag "gacha_machine.png",
+          class: "gacha-machine-image" %>
+      </div>
+
+      <p>30ポイントで1回引けるよ！</p>
+
+      <%= form_with url: gacha_draw_path, method: :post do %>
+        <%= submit_tag "🎰 ガチャを引く", class: "gacha-button" %>
+      <% end %>
+
+    <% end %>
+
+    <%= link_to "🏠 ホームへ戻る",
+      dashboard_path,
+      class: "back-link" %>
+
+  </div>
+
+</div>

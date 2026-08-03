@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   # ダッシュボード
   get "dashboard", to: "dashboard#index"
+  get "gacha", to: "gacha#show"
+  post "gacha/draw", to: "gacha#draw"
 
   # 家事一覧
   get "tasks", to: "tasks#index"

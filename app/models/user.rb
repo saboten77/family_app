@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
   has_many :family_members
   has_many :families, through: :family_members
+
+  has_many :user_reward_cards, dependent: :destroy
+  has_many :reward_cards, through: :user_reward_cards
 end
