@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
    unless @family
     redirect_to new_family_path, alert: "まず家族を作成してください🐹"
     return
-    end
+   end
 
   manager = EnergyManager.new(@family)
   manager.daily_update
