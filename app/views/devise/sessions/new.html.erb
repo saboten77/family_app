@@ -9,11 +9,17 @@
     <div class="auth-character">
       <%= image_tag "chara/character1_sleeping.png" %>
     </div>
-    
+
+    <% if flash[:notice] %>
+      <div class="notice-card">
+        🌱 <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <% if flash[:alert] %>
-    <div class="alert-message">
-    <%= flash[:alert] %>
-    </div>
+      <div class="alert-message">
+        <%= flash[:alert] %>
+      </div>
     <% end %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

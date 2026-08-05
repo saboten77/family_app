@@ -75,3 +75,6 @@ end
  def email_params
   params.require(:user).permit(:email)
  end
+
+ def edit_profile
+ end
