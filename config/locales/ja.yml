@@ -15,6 +15,7 @@ ja:
             email:
               blank: "を入力してください"
               taken: "はすでに使用されています"
+              not_found: "登録されていません"
             password:
               blank: "を入力してください"
             password_confirmation:
@@ -40,6 +41,7 @@ ja:
     failure:
       invalid: "メールアドレスまたはパスワードが正しくありません"
       not_found_in_database: "メールアドレスまたはパスワードが正しくありません"
+
     user:
       not_found_in_database: "メールアドレスまたはパスワードが正しくありません"
       unauthenticated: "ログインしてください"
@@ -53,3 +55,8 @@ ja:
       signed_up: "アカウントを作成しました"
       updated: "アカウント情報を更新しました"
       destroyed: "アカウントを削除しました"
+
+    passwords:
+      send_instructions: "パスワード再設定のメールを送信しました📩"
+      updated: "パスワードを変更しました🌱"
+      
