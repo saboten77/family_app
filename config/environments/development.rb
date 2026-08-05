@@ -55,7 +55,7 @@ Rails.application.configure do
 
   # Send emails with Resend.
   config.action_mailer.delivery_method = :resend
-  
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
