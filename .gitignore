@@ -20,3 +20,5 @@
 # Ignore master key.
 /config/master.key
 coverage/
+
+.env
