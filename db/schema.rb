@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_02_082240) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_09_024727) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -39,6 +39,20 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_02_082240) do
     t.string "name", null: false
     t.string "rarity", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reward_requests", force: :cascade do |t|
+    t.datetime "completed_at"
+    t.bigint "completed_by_user_id"
+    t.datetime "created_at", null: false
+    t.bigint "requester_user_id"
+    t.bigint "reward_card_id", null: false
+    t.string "status", default: "pending", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["requester_user_id"], name: "index_reward_requests_on_requester_user_id"
+    t.index ["reward_card_id"], name: "index_reward_requests_on_reward_card_id"
+    t.index ["user_id"], name: "index_reward_requests_on_user_id"
   end
 
   create_table "role_settings", force: :cascade do |t|
@@ -103,6 +117,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_02_082240) do
 
   add_foreign_key "family_members", "families"
   add_foreign_key "family_members", "users"
+  add_foreign_key "reward_requests", "reward_cards"
+  add_foreign_key "reward_requests", "users"
+  add_foreign_key "reward_requests", "users", column: "completed_by_user_id"
+  add_foreign_key "reward_requests", "users", column: "requester_user_id"
   add_foreign_key "role_settings", "family_members"
   add_foreign_key "task_logs", "family_members"
   add_foreign_key "task_logs", "tasks"

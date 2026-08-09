@@ -201,3 +201,37 @@ tasks.each do |category, task_names|
     )
   end
 end
+
+# ご褒美カード
+reward_cards = [
+  { name: "SSRご褒美カード", rarity: "SSR", image: "ssr_01.png" },
+
+  { name: "SRご褒美カード1", rarity: "SR", image: "sr_01.png" },
+  { name: "SRご褒美カード2", rarity: "SR", image: "sr_02.png" },
+  { name: "SRご褒美カード3", rarity: "SR", image: "sr_03.png" },
+
+  { name: "レアご褒美カード1", rarity: "R", image: "rare_01.png" },
+  { name: "レアご褒美カード2", rarity: "R", image: "rare_02.png" },
+  { name: "レアご褒美カード3", rarity: "R", image: "rare_03.png" },
+  { name: "レアご褒美カード4", rarity: "R", image: "rare_04.png" },
+  { name: "レアご褒美カード5", rarity: "R", image: "rare_05.png" },
+  { name: "レアご褒美カード6", rarity: "R", image: "rare_06.png" },
+
+  { name: "ノーマルご褒美カード1", rarity: "N", image: "normal_01.png" },
+  { name: "ノーマルご褒美カード2", rarity: "N", image: "normal_02.png" },
+  { name: "ノーマルご褒美カード3", rarity: "N", image: "normal_03.png" },
+  { name: "ノーマルご褒美カード4", rarity: "N", image: "normal_04.png" },
+  { name: "ノーマルご褒美カード5", rarity: "N", image: "normal_05.png" },
+  { name: "ノーマルご褒美カード6", rarity: "N", image: "normal_06.png" },
+  { name: "ノーマルご褒美カード7", rarity: "N", image: "normal_07.png" },
+  { name: "ノーマルご褒美カード8", rarity: "N", image: "normal_08.png" },
+  { name: "ノーマルご褒美カード9", rarity: "N", image: "normal_09.png" },
+  { name: "ノーマルご褒美カード10", rarity: "N", image: "normal_10.png" }
+]
+
+reward_cards.each do |card|
+  RewardCard.find_or_create_by!(image: card[:image]) do |reward_card|
+    reward_card.name = card[:name]
+    reward_card.rarity = card[:rarity]
+  end
+end

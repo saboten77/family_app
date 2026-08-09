@@ -1,0 +1,155 @@
+<%= stylesheet_link_tag "reward_cards", "data-turbo-track": "reload" %>
+
+<!-- =========================
+     ご褒美カード：自分のカード
+     ========================= -->
+
+<div id="my-cards" class="reward-tab-content active">
+
+  <h1>🎁 自分のご褒美カード</h1>
+
+  <% if @user_reward_cards.any? %>
+
+    <div class="reward-cards-grid">
+
+      <% @user_reward_cards.each do |user_reward_card| %>
+
+        <% pending_request = @my_reward_requests.find do |request|
+          request.reward_card_id == user_reward_card.reward_card_id
+        end %>
+
+        <% if pending_request %>
+
+          <!-- =========================
+               依頼中のカード
+               ========================= -->
+
+          <div class="reward-card reward-card--pending">
+
+            <%= image_tag "reward_cards/#{user_reward_card.reward_card.image}",
+              class: "reward-card-image" %>
+
+            <div class="reward-card-quantity">
+              ×<%= user_reward_card.quantity %>
+            </div>
+
+            <div class="reward-requesting">
+              💌 家族に依頼中
+            </div>
+
+          </div>
+
+        <% else %>
+
+          <!-- =========================
+               まだ依頼していないカード
+               ========================= -->
+
+          <%= link_to use_reward_card_path(user_reward_card),
+            class: "reward-card" do %>
+
+            <%= image_tag "reward_cards/#{user_reward_card.reward_card.image}",
+              class: "reward-card-image" %>
+
+            <div class="reward-card-quantity">
+              ×<%= user_reward_card.quantity %>
+            </div>
+
+          <% end %>
+
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <div class="reward-empty">
+      まだご褒美カードを持っていないよ🐹
+    </div>
+
+  <% end %>
+
+  <!-- ホームへ戻る -->
+
+  <div class="reward-home-link">
+    <%= link_to "🏠 ホームへ戻る",
+      dashboard_path,
+      class: "reward-home-button" %>
+  </div>
+
+</div>
+
+
+<!-- =========================
+     ご褒美カード：家族からの依頼
+     ========================= -->
+
+<div id="reward-requests" class="reward-tab-content">
+
+  <h1>💌 家族からの依頼</h1>
+
+  <% if @reward_requests.any? %>
+
+    <div class="reward-requests-list">
+
+      <% @reward_requests.each do |request| %>
+
+        <%= link_to confirm_reward_card_path(request),
+          class: "reward-request-card" do %>
+
+          <div class="reward-request-message">
+            💌 <%= request.user.name.presence || "家族" %>から
+            ご褒美依頼がきたよ！
+          </div>
+
+          <%= image_tag "reward_cards/#{request.reward_card.image}",
+            class: "reward-request-image" %>
+
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <div class="reward-empty">
+      💌 家族からの依頼はまだないよ🐹
+    </div>
+
+  <% end %>
+
+  <!-- ホームへ戻る -->
+
+  <div class="reward-home-link">
+    <%= link_to "🏠 ホームへ戻る",
+      dashboard_path,
+      class: "reward-home-button" %>
+  </div>
+
+</div>
+
+
+<!-- =========================
+     下部タブ
+     ========================= -->
+
+<nav class="reward-tabs">
+
+  <button
+    class="reward-tab active"
+    type="button"
+    data-tab="my-cards">
+    🎁 自分のカード
+  </button>
+
+  <button
+    class="reward-tab"
+    type="button"
+    data-tab="reward-requests">
+    💌 家族からの依頼
+  </button>
+
+</nav>

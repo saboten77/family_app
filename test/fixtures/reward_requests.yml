@@ -1,0 +1,12 @@
+one:
+  user: one
+  requester_user: two
+  reward_card: one
+  status: pending
+
+two:
+  user: two
+  requester_user: one
+  reward_card: two
+  status: completed
+  

@@ -1,0 +1,327 @@
+.reward-cards-page {
+  min-height: 100vh;
+  padding: 20px 16px 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* =========================
+   カード一覧
+   ========================= */
+
+.reward-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.reward-card {
+  position: relative;
+}
+
+.reward-card-image {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* 所持枚数 */
+
+.reward-card-quantity {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* =========================
+   家族からの依頼
+   ========================= */
+
+.reward-requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.reward-request-card {
+  display: block;
+  padding: 14px;
+  border-radius: 20px;
+
+  background: #fffaf0;
+
+  text-decoration: none;
+  color: #6f6245;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.15s ease;
+}
+
+.reward-request-card:active {
+  transform: scale(0.97);
+}
+
+.reward-request-message {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.reward-request-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 12px;
+}
+
+/* =========================
+   確認画面
+   ========================= */
+
+.reward-confirm-page {
+  min-height: 100vh;
+  padding: 30px 20px 40px;
+
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.reward-confirm-message {
+  margin: 10px 0 20px;
+
+  font-size: 15px;
+  font-weight: bold;
+  color: #6f6245;
+}
+
+.reward-confirm-image {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+
+  border-radius: 16px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.reward-confirm-question {
+  margin: 24px 0 18px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #6f6245;
+}
+
+/* ボタン */
+
+.reward-confirm-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.reward-confirm-yes,
+.reward-confirm-no {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 18px;
+
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+/* はい */
+
+.reward-confirm-yes {
+  border: none;
+
+  background: #fff0a8;
+  color: #6f6245;
+
+  box-shadow: 0 4px 0 #e4d27b;
+}
+
+.reward-confirm-yes:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #e4d27b;
+}
+
+/* まだ */
+
+.reward-confirm-no {
+  background: #f7f3e8;
+  color: #8b8170;
+
+  box-shadow: 0 4px 0 #e5dcc9;
+}
+
+.reward-confirm-no:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #e5dcc9;
+}
+
+/* =========================
+   空の状態
+   ========================= */
+
+.reward-empty {
+  padding: 30px 10px;
+
+  color: #8b8170;
+  font-size: 14px;
+}
+
+/* =========================
+   タブ
+   ========================= */
+
+.reward-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  gap: 10px;
+
+  padding: 10px 14px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-top: 2px solid #f3e7c9;
+
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.06);
+
+  z-index: 100;
+}
+
+.reward-tab {
+  flex: 1;
+
+  border: none;
+  border-radius: 18px;
+
+  padding: 11px 8px;
+
+  background: #f7f3e8;
+  color: #8b8170;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 0 #e5dcc9;
+}
+
+.reward-tab.active {
+  background: #fff3b8;
+  color: #6f6245;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 0 #e4d27b,
+    0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.reward-tab:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   タブ表示
+   ========================= */
+
+.reward-tab-content {
+  display: none;
+}
+
+.reward-tab-content.active {
+  display: block;
+}
+
+.reward-card--pending {
+  cursor: default;
+  opacity: 0.9;
+}
+
+/* =========================
+   カード一覧ページ
+   下部タブに隠れないように余白を確保
+   ========================= */
+
+.reward-tab-content {
+  padding: 20px 16px 120px;
+  box-sizing: border-box;
+}
+
+
+/* カード一覧 */
+
+.reward-cards-grid {
+  padding-bottom: 20px;
+}
+
+
+/* 家族からの依頼一覧 */
+
+.reward-requests-list {
+  padding-bottom: 20px;
+}
+
+.reward-home-link {
+  text-align: center;
+  margin: 28px 0 20px;
+}
+
+.reward-home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  background: #edf7e8;
+  color: #6f8065;
+
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+
+  box-shadow: 0 3px 0 #cddfc5;
+}

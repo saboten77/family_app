@@ -9,7 +9,7 @@ class RoleSettingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
-    get role_settings_edit_url
+    get edit_role_setting_path
     assert_response :success
   end
 end
