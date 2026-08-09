@@ -21,6 +21,15 @@ export default class extends Controller {
       this.valueTargets[index].textContent = `${value}%`
     })
 
-    document.querySelector("#total-value").textContent = total
+    const totalValue = document.querySelector("#total-value")
+    const totalMessage = document.querySelector("#total-message")
+
+    totalValue.textContent = total
+
+    if (total === 100) {
+      totalMessage.textContent = " 🌱 OK！"
+    } else {
+      totalMessage.textContent = " ⚠️ 合計を100%にしてください"
+    }
   }
 }

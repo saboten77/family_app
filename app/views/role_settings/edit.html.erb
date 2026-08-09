@@ -8,7 +8,8 @@
 <div class="role-setting-wrapper">
 
   <p class="setting-description">
-    家族の支え合いバランスを設定しよう🌱
+  家族の支え合いバランスを設定しよう🌱<br>
+  家族全員の役割割合の合計が100%になるように設定してください。
   </p>
 
   <%= form_with url: role_setting_path, method: :patch do |f| %>
@@ -43,7 +44,8 @@
       <% end %>
 
       <div class="total-card">
-        合計 <span id="total-value">100</span>%
+      合計 <span id="total-value">100</span>%
+      <span id="total-message"> 🌱 OK！</span>
       </div>
 
     </div>

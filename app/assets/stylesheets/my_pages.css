@@ -194,3 +194,33 @@ body {
 .submit-button:hover {
   transform: translateY(-2px);
 }
+
+.logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 18px 20px;
+
+  background: #fff;
+  border: none;
+  border-top: 1px solid #f0f0f0;
+
+  color: #d9534f;
+  font-weight: bold;
+
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background-color .2s;
+}
+
+.logout:hover {
+  background: #f7fbe8;
+}

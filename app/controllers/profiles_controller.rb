@@ -9,11 +9,17 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update(profile_params)
-      redirect_to new_family_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+  if profile_params[:name].blank?
+    @user.errors.add(:name, "を入力してください")
+    render :edit, status: :unprocessable_entity
+    return
+  end
+
+  if @user.update(profile_params)
+    redirect_to new_family_path
+  else
+    render :edit, status: :unprocessable_entity
+  end
   end
 
   def select_character
@@ -26,12 +32,15 @@ class ProfilesController < ApplicationController
   end
 
   def change_character
-    if request.patch?
-      if @user.update(character: params[:character])
-        redirect_to account_profile_path,
-                    notice: "キャラクターを変更しました🐾"
-      end
+  if request.patch?
+    if @user.update(character: params[:character])
+      redirect_to account_profile_path,
+                  notice: "キャラクターを変更しました🐾"
+    else
+      redirect_to account_profile_path,
+                  alert: "キャラクターの変更に失敗しました💦"
     end
+  end
   end
 
   private

@@ -12,14 +12,22 @@
 
     <%= form_with model: @user, url: profile_path, method: :patch do |f| %>
 
-      <h3>キャラクター</h3>
+    <% if @user.errors.any? %>
+    <div class="error-messages">
+    <% @user.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
+    </div>
+    <% end %>
+
+  <h3>キャラクター</h3>
 
 <div class="selected-character">
   <%= image_tag "characters/#{@user.character || 'character1'}.png",
                 class: "profile-character" %>
 </div>
 
-<%= link_to "変更する", profile_change_character_path, class: "change-character-btn" %>
+<%= link_to "変更する", profile_select_character_path, class: "change-character-btn" %>
 
       <div class="field">
         <%= f.label :name, "ニックネーム" %>
