@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post "gacha/draw", to: "gacha#draw"
 
   get "reward_cards", to: "reward_cards#index"
-  
+
   # ご褒美依頼
   post "reward_requests",
   to: "reward_requests#create",
@@ -43,9 +43,9 @@ Rails.application.routes.draw do
   # =========================
   get "tasks", to: "tasks#index"
 
-  resources :task_categories, only: [:index]
+  resources :task_categories, only: [ :index ]
 
-  resources :task_logs, only: [:new, :create] do
+  resources :task_logs, only: [ :new, :create ] do
     get :complete, on: :collection
   end
 
@@ -54,9 +54,9 @@ Rails.application.routes.draw do
   # =========================
   # 家族
   # =========================
-  resources :families, only: [:index, :new, :create]
-  resources :family_joins, only: [:new, :create]
-  resources :family_invites, only: [:show]
+  resources :families, only: [ :index, :new, :create ]
+  resources :family_joins, only: [ :new, :create ]
+  resources :family_invites, only: [ :show ]
 
   # =========================
   # マイページ
@@ -93,10 +93,10 @@ Rails.application.routes.draw do
         as: :update_account_password
 
   # プロフィール
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [ :show, :edit, :update ]
 
   # 役割設定
-  resource :role_setting, only: [:edit, :update]
+  resource :role_setting, only: [ :edit, :update ]
 
   # =========================
   # キャラクター
@@ -107,7 +107,7 @@ Rails.application.routes.draw do
   # =========================
   # お問い合わせ
   # =========================
-  resources :contacts, only: [:new]
+  resources :contacts, only: [ :new ]
 
   # =========================
   # 法的ページ

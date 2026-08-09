@@ -17,5 +17,4 @@ class User < ApplicationRecord
          class_name: "RewardRequest",
          foreign_key: :completed_by_user_id,
          dependent: :nullify
-
 end

@@ -1,11 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  rarity: MyString
-  image: MyString
+  name: My Reward Card
+  rarity: normal
+  image: normal_01.png
 
 two:
-  name: MyString
-  rarity: MyString
-  image: MyString
+  name: My Rare Card
+  rarity: rare
+  image: rare_01.png
