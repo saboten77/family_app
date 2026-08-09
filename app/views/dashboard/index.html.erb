@@ -60,16 +60,28 @@
 
 </div>
 
-  <nav class="bottom-nav">
-    <%= link_to task_categories_path, class: "nav-item" do %>
-      <div class="icon">🧺</div>
-      <div class="label">家事記録</div>
-    <% end %>
 
-    <%= link_to task_histories_path, class: "nav-item" do %>
-      <div class="icon">📅</div>
-      <div class="label">家事履歴</div>
-    <% end %>
-  </nav>
+<nav class="bottom-nav">
+  <%= link_to task_categories_path, class: "nav-item" do %>
+    <div class="icon">🧺</div>
+    <div class="label">家事記録</div>
+  <% end %>
+
+  <%= link_to task_histories_path, class: "nav-item" do %>
+    <div class="icon">📅</div>
+    <div class="label">家事履歴</div>
+  <% end %>
+
+  <%= link_to gacha_path, class: "nav-item" do %>
+    <div class="icon">🎰</div>
+    <div class="label">ガチャ</div>
+  <% end %>
+
+  <%= link_to reward_cards_path, class: "nav-item" do %>
+    <div class="icon">🎁</div>
+    <div class="label">カード</div>
+  <% end %>
+</nav>
+
 
 </div>

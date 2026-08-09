@@ -1,79 +1,131 @@
 Rails.application.routes.draw do
-  get "characters/select"
-  get "characters/show"
-  get "role_settings/edit"
-  get "task_logs/new"
-  get "task_logs/create"
-  get "task_categories/index"
-  get "family_invites/show"
-  get "profile/change_character", to: "profiles#change_character"
-  patch "profile/change_character", to: "profiles#change_character"
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  patch "profile/setup", to: "profiles#setup"
-
-  # ユーザー認証（Devise）
+  # =========================
+  # 認証
+  # =========================
   devise_for :users
 
-  # ホーム画面
+  # =========================
+  # ホーム
+  # =========================
   root "home#index"
-
-  # ダッシュボード
   get "dashboard", to: "dashboard#index"
+
+  # =========================
+  # ご褒美・ガチャ
+  # =========================
   get "gacha", to: "gacha#show"
   post "gacha/draw", to: "gacha#draw"
 
-  # 家事一覧
+  get "reward_cards", to: "reward_cards#index"
+  
+  # ご褒美依頼
+  post "reward_requests",
+  to: "reward_requests#create",
+  as: :reward_requests
+
+  # 自分のカードを使う確認
+  get "reward_cards/:id/use",
+      to: "reward_cards#use_confirm",
+      as: :use_reward_card
+
+  # 家族からの依頼確認
+  get "reward_cards/:id/confirm",
+      to: "reward_cards#confirm",
+      as: :confirm_reward_card
+
+  # 家族からの依頼を完了
+  patch "reward_cards/:id/complete",
+        to: "reward_cards#complete",
+        as: :complete_reward_card
+
+  # =========================
+  # 家事
+  # =========================
   get "tasks", to: "tasks#index"
 
-  # 家事履歴
+  resources :task_categories, only: [:index]
+
+  resources :task_logs, only: [:new, :create] do
+    get :complete, on: :collection
+  end
+
   get "task_histories", to: "task_histories#index"
 
+  # =========================
+  # 家族
+  # =========================
+  resources :families, only: [:index, :new, :create]
+  resources :family_joins, only: [:new, :create]
+  resources :family_invites, only: [:show]
+
+  # =========================
   # マイページ
+  # =========================
   get "mypage", to: "my_pages#show"
 
+  # =========================
   # アカウント設定
+  # =========================
   get "account", to: "accounts#show"
 
   # プロフィール変更
   get "account/profile", to: "profiles#edit"
-  patch "/account/profile", to: "accounts#update_profile", as: :update_account_profile
+  patch "account/profile",
+        to: "accounts#update_profile",
+        as: :update_account_profile
 
-  get "profile/select_character", to: "profiles#select_character"
-  patch "profile/select_character", to: "profiles#select_character"
+  # キャラクター変更
+  get "profile/select_character",
+      to: "profiles#select_character"
+  patch "profile/select_character",
+        to: "profiles#select_character"
 
   # メールアドレス変更
   get "account/email", to: "accounts#edit_email"
-  patch "/account/email",
-  to: "accounts#update_email",
-  as: :update_account_email
+  patch "account/email",
+        to: "accounts#update_email",
+        as: :update_account_email
 
   # パスワード変更
   get "account/password", to: "accounts#edit_password"
-  patch "account/password", to: "accounts#update_password", as: :update_account_password
+  patch "account/password",
+        to: "accounts#update_password",
+        as: :update_account_password
 
-  # 家族管理
-  resources :families, only: [ :index, :new, :create ]
-  resources :family_joins, only: [ :new, :create ]
-  resources :family_invites, only: [ :show ]
+  # プロフィール
+  resource :profile, only: [:show, :edit, :update]
 
+  # 役割設定
+  resource :role_setting, only: [:edit, :update]
+
+  # =========================
+  # キャラクター
+  # =========================
+  get "characters/select", to: "characters#select"
+  get "characters/show", to: "characters#show"
+
+  # =========================
   # お問い合わせ
-  resources :contacts, only: [ :new ]
+  # =========================
+  resources :contacts, only: [:new]
 
-  # 利用規約
+  # =========================
+  # 法的ページ
+  # =========================
   get "terms", to: "pages#terms"
-
-  # プライバシーポリシー
   get "privacy", to: "pages#privacy"
 
-  # ヘルスチェック（Render確認用）
-  get "up" => "rails/health#show", as: :rails_health_check
+  # =========================
+  # PWA
+  # =========================
+  get "manifest",
+      to: "rails/pwa#manifest",
+      as: :pwa_manifest
 
-  resources :family_invites, only: [ :show ]
-  resources :task_categories, only: [ :index ]
-  resources :task_logs, only: [ :new, :create ]
-  resource :profile, only: [ :show, :edit, :update ]
-  resource :role_setting, only: [ :edit, :update ]
-  resources :task_logs do
-  get :complete, on: :collection
-end
+  # =========================
+  # ヘルスチェック
+  # =========================
+  get "up",
+      to: "rails/health#show",
+      as: :rails_health_check
 end

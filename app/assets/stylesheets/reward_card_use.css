@@ -1,0 +1,184 @@
+/* =========================
+   ご褒美カード使用確認ページ
+   ========================= */
+
+.reward-use-page {
+  min-height: 100vh;
+  padding: 32px 20px 110px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+/* ヘッダー */
+
+.reward-use-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.reward-use-header span {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.reward-use-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+/* ご褒美カード本体 */
+
+.reward-use-card {
+  width: min(100%, 380px);
+  margin: 0 auto;
+  padding: 22px 18px 28px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 0 rgba(229, 220, 201, 0.8);
+
+  text-align: center;
+}
+
+
+/* カード画像 */
+
+.reward-use-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.reward-use-image {
+  width: min(72vw, 250px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* テキスト */
+
+.reward-use-content {
+  text-align: center;
+}
+
+.reward-use-label {
+  margin: 4px 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #b49a55;
+}
+
+.reward-use-content h2 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #5f5648;
+}
+
+.reward-use-message {
+  margin: 0 auto 24px;
+  line-height: 1.8;
+  font-size: 14px;
+  color: #8b8170;
+}
+
+
+/* 家族にお願いするボタン */
+
+.reward-use-button {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+
+  padding: 14px 16px;
+
+  background: #fff0a8;
+  color: #665a3e;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 0 #dfce78;
+  transition: 0.15s ease;
+}
+
+.reward-use-button:hover {
+  transform: translateY(-2px);
+}
+
+.reward-use-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #dfce78;
+}
+
+
+/* まだ使わない */
+
+.reward-cancel-link {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 0;
+
+  color: #9a9080;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.reward-cancel-link:hover {
+  text-decoration: underline;
+}
+
+/* まだ使わないボタン */
+
+.reward-cancel-link {
+  display: block;
+  width: fit-content;
+  min-width: 180px;
+
+  margin: 16px auto 0;
+  padding: 11px 24px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background: #edf7e8;
+  color: #6f8065;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  box-shadow: 0 3px 0 #cddfc5;
+
+  transition: all 0.15s ease;
+}
+
+.reward-cancel-link:hover {
+  transform: translateY(-2px);
+  background: #e5f2df;
+}
+
+.reward-cancel-link:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #cddfc5;
+}

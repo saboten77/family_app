@@ -29,8 +29,12 @@ class GachaManager
         reward_card: reward_card
       )
 
-      user_reward_card.quantity ||= 0
-      user_reward_card.quantity += 1
+      if user_reward_card.new_record?
+        user_reward_card.quantity = 1
+      else
+        user_reward_card.quantity += 1
+      end
+
       user_reward_card.save!
     end
 

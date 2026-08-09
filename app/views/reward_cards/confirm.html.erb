@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag "reward_cards", "data-turbo-track": "reload" %>
+
+<div class="reward-confirm-page">
+
+  <h1>🎁 ご褒美カード</h1>
+
+  <p class="reward-confirm-message">
+    <%= @reward_request.user.name.presence || "家族" %>から
+    ご褒美依頼がきたよ💌
+  </p>
+
+  <%= image_tag "reward_cards/#{@reward_request.reward_card.image}",
+    class: "reward-confirm-image" %>
+
+  <p class="reward-confirm-question">
+    このご褒美を実行しましたか？🐹
+  </p>
+
+  <div class="reward-confirm-actions">
+
+    <%= button_to "はい！✨",
+      complete_reward_card_path(@reward_request),
+      method: :patch,
+      class: "reward-confirm-yes" %>
+
+    <%= link_to "まだだよ",
+      reward_cards_path,
+      class: "reward-confirm-no" %>
+
+  </div>
+
+</div>

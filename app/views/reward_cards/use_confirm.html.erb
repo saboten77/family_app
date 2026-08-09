@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag "reward_card_use", "data-turbo-track": "reload" %>
+
+<div class="reward-use-page">
+
+  <h1>🎁 ご褒美カード</h1>
+
+  <div class="reward-use-card">
+
+    <%= image_tag "reward_cards/#{@reward_card.image}",
+      class: "reward-use-image" %>
+
+    <h2>
+      このご褒美を使いますか？🐹
+    </h2>
+
+    <p class="reward-use-message">
+      家族に「このご褒美をお願いしたいよ！」と<br>
+      依頼を送ることができます💌
+    </p>
+
+    <%= button_to "💌 家族に依頼する",
+      reward_requests_path(
+        reward_card_id: @reward_card.id
+      ),
+      method: :post,
+      class: "reward-use-button" %>
+
+    <%= link_to "まだ使わない",
+      reward_cards_path,
+      class: "reward-cancel-link" %>
+
+  </div>
+
+</div>

@@ -11,4 +11,5 @@ class Family < ApplicationRecord
   def generate_invite_code
     self.invite_code ||= SecureRandom.alphanumeric(6).upcase
   end
+
 end
