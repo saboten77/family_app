@@ -325,3 +325,182 @@
 
   box-shadow: 0 3px 0 #cddfc5;
 }
+
+/* =========================
+   みんなOK！カード使用画面
+   ========================= */
+
+.reward-approved-page {
+  min-height: 100vh;
+  padding: 30px 20px 110px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: center;
+}
+
+.reward-approved-card {
+  width: min(100%, 380px);
+  padding: 24px 20px 28px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 0 rgba(229, 220, 201, 0.8);
+}
+
+.reward-approved-message {
+  margin-bottom: 18px;
+
+  font-size: 22px;
+  font-weight: bold;
+  color: #6f6245;
+}
+
+.reward-approved-image {
+  width: min(78vw, 280px);
+  height: auto;
+
+  display: block;
+  margin: 0 auto 22px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.reward-approved-card h2 {
+  margin: 0 0 12px;
+
+  font-size: 21px;
+  line-height: 1.5;
+
+  color: #5f5648;
+}
+
+.reward-approved-text {
+  margin: 0 0 24px;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: #8b8170;
+}
+
+.reward-approved-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.reward-approved-thanks {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #fff0a8;
+  color: #665a3e;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 0 #dfce78;
+
+  transition: 0.15s ease;
+}
+
+.reward-approved-thanks:hover {
+  transform: translateY(-2px);
+}
+
+.reward-approved-thanks:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #dfce78;
+}
+
+.reward-approved-back {
+  display: block;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  background: #edf7e8;
+  color: #6f8065;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  box-shadow: 0 3px 0 #cddfc5;
+
+  transition: 0.15s ease;
+}
+
+.reward-approved-back:hover {
+  transform: translateY(-2px);
+}
+
+.reward-approved-back:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #cddfc5;
+}
+
+/* =========================
+   ホームに戻る
+   ========================= */
+
+.reward-home-link {
+  display: block;
+  width: 100%;
+  padding: 20px 16px 120px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.reward-home-button {
+  display: inline-block;
+
+  padding: 11px 24px;
+
+  border-radius: 999px;
+
+  background: #edf7e8;
+  color: #6f8065;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  box-shadow: 0 3px 0 #cddfc5;
+}
+
+.reward-home-button:hover {
+  transform: translateY(-2px);
+  background: #e5f2df;
+}
+
+.reward-home-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #cddfc5;
+}

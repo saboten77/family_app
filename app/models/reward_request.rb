@@ -7,6 +7,9 @@ class RewardRequest < ApplicationRecord
 
   belongs_to :reward_card
 
+  belongs_to :user_reward_card,
+             optional: true
+
   belongs_to :completed_by_user,
              class_name: "User",
              optional: true

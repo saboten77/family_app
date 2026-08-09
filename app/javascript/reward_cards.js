@@ -8,14 +8,12 @@ document.addEventListener("turbo:load", () => {
     tab.addEventListener("click", () => {
       const targetId = tab.dataset.tab;
 
-      // タブの選択状態を切り替える
       tabs.forEach((item) => {
         item.classList.remove("active");
       });
 
       tab.classList.add("active");
 
-      // 表示するコンテンツを切り替える
       contents.forEach((content) => {
         content.classList.remove("active");
 

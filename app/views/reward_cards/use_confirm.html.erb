@@ -2,32 +2,63 @@
 
 <div class="reward-use-page">
 
-  <h1>🎁 ご褒美カード</h1>
+  <!-- =========================
+       ヘッダー
+       ========================= -->
+
+  <div class="reward-use-header">
+
+    <span>🎁</span>
+
+    <h1>ご褒美カード</h1>
+
+  </div>
+
+
+  <!-- =========================
+       ご褒美カード
+       ========================= -->
 
   <div class="reward-use-card">
 
-    <%= image_tag "reward_cards/#{@reward_card.image}",
-      class: "reward-use-image" %>
+    <div class="reward-use-image-wrap">
 
-    <h2>
-      このご褒美を使いますか？🐹
-    </h2>
+      <%= image_tag "reward_cards/#{@reward_card.image}",
+        class: "reward-use-image" %>
 
-    <p class="reward-use-message">
-      家族に「このご褒美をお願いしたいよ！」と<br>
-      依頼を送ることができます💌
-    </p>
+    </div>
 
-    <%= button_to "💌 家族に依頼する",
-      reward_requests_path(
-        reward_card_id: @reward_card.id
-      ),
-      method: :post,
-      class: "reward-use-button" %>
 
-    <%= link_to "まだ使わない",
-      reward_cards_path,
-      class: "reward-cancel-link" %>
+    <div class="reward-use-content">
+
+      <div class="reward-use-label">
+        ご褒美カード
+      </div>
+
+      <h2>
+        このご褒美を使いますか？🐹
+      </h2>
+
+      <p class="reward-use-message">
+        家族に「このご褒美をお願いしたいよ！」と<br>
+        依頼を送ることができます💌
+      </p>
+
+
+      <%= button_to "💌 家族に依頼する",
+        reward_requests_path(
+          reward_card_id: @reward_card.id,
+          user_reward_card_id: @user_reward_card.id
+        ),
+        method: :post,
+        class: "reward-use-button" %>
+
+
+      <%= link_to "まだ使わない",
+        reward_cards_path,
+        class: "reward-cancel-link" %>
+
+    </div>
 
   </div>
 
