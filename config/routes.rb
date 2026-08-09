@@ -28,6 +28,19 @@ Rails.application.routes.draw do
       to: "reward_cards#use_confirm",
       as: :use_reward_card
 
+# =========================
+# みんなOKになったカード
+# =========================
+
+get "reward_cards/:id/approved",
+to: "reward_cards#approved",
+as: :approved_reward_card
+
+delete "reward_cards/:id/approved",
+to: "reward_cards#destroy_approved",
+as: :destroy_approved_reward_card
+
+
   # 家族からの依頼確認
   get "reward_cards/:id/confirm",
       to: "reward_cards#confirm",
