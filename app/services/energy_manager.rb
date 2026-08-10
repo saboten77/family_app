@@ -57,7 +57,7 @@ class EnergyManager
 
     total_tasks = logs.count
 
-    differences = @family.family_members.map do |member|
+    differences = @family.family_members.includes(:role_setting).map do |member|
       setting = member.role_setting
 
       next unless setting
@@ -93,10 +93,10 @@ class EnergyManager
   # 今日の家事記録を取得
   def today_task_logs
     @family.family_members
-           .includes(:task_logs)
-           .flat_map(&:task_logs)
-           .select do |log|
-             log.completed_at.to_date == Date.current
-           end
+      .includes(:task_logs)
+      .flat_map(&:task_logs)
+      .select do |log|
+        log.completed_at.to_date == Date.current
+      end
   end
 end

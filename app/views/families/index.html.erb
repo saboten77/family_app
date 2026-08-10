@@ -1,7 +1,7 @@
 <h1 class="page-title">👨‍👩‍👧 家族管理</h1>
 
-<% if current_user.families.any? %>
-  <% family = current_user.families.first %>
+<% if @family %>
+  <% family = @family %>
 
   <div class="family-card-wrapper">
     <div class="family-card">
@@ -16,7 +16,7 @@
       <div class="setting-item">
         <p class="setting-title">👥 家族メンバー</p>
 
-        <% family.family_members.each do |member| %>
+        <% @family_members.each do |member| %>
           <p class="setting-value">
             🐻 <%= member.user.name %>
           </p>
@@ -33,7 +33,6 @@
 
         <button class="copy-button" onclick="copyInviteCode()">
        📋 コピーする
-        </button>
         </button>
       </div>
 

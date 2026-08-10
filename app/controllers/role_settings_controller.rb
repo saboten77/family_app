@@ -6,7 +6,9 @@ class RoleSettingsController < ApplicationController
 
     default_percentage = 100 / @family.family_members.count
 
-    @family.family_members.each do |member|
+    family_members = @family.family_members.includes(:user, :role_setting)
+
+    family_members.each do |member|
       member.create_role_setting(percentage: default_percentage) unless member.role_setting
     end
   end
