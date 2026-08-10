@@ -1,8 +1,16 @@
 class FamiliesController < ApplicationController
+  def index
+    @family = current_user.families.first
+
+    if @family
+      @family_members = @family.family_members.includes(:user)
+    end
+  end
+
   def new
     if current_user.family_members.exists?
       redirect_to dashboard_path,
-        alert: "すでに家族に所属しています🐹"
+                  alert: "すでに家族に所属しています🐹"
       return
     end
 
@@ -12,7 +20,7 @@ class FamiliesController < ApplicationController
   def create
     if current_user.family_members.exists?
       redirect_to dashboard_path,
-        alert: "すでに家族に所属しています🐹"
+                  alert: "すでに家族に所属しています🐹"
       return
     end
 

@@ -52,7 +52,7 @@ class RewardCardsController < ApplicationController
   def confirm
   @reward_request =
     current_user.reward_requests
-                .includes(:reward_card)
+                .includes(:requester_user, :reward_card)
                 .find(params[:id])
   end
 
