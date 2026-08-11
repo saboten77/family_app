@@ -209,3 +209,63 @@
   font-size: 14px;
   text-align: center;
 }
+
+/* ===========================
+   スマホ対応
+=========================== */
+
+@media (max-width: 600px) {
+
+  .profile-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 12px;
+    box-sizing: border-box;
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 380px;
+    margin: 10px auto;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    border-radius: 24px;
+  }
+
+  .profile-card h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .character-card {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .character-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profile-character {
+    width: 120px;
+    height: 120px;
+  }
+
+  .next-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
