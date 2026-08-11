@@ -82,16 +82,24 @@ as: :destroy_approved_reward_card
   get "account", to: "accounts#show"
 
   # プロフィール変更
-  get "account/profile", to: "profiles#edit"
+  get "account/profile", to: "accounts#edit_profile"
   patch "account/profile",
         to: "accounts#update_profile",
         as: :update_account_profile
 
   # キャラクター変更
   get "profile/select_character",
-      to: "profiles#select_character"
+    to: "profiles#select_character"
+
   patch "profile/select_character",
-        to: "profiles#select_character"
+      to: "profiles#select_character"
+
+  get "profile/change_character",
+    to: "profiles#change_character",
+    as: :profile_change_character
+
+  patch "profile/change_character",
+      to: "profiles#change_character"
 
   # メールアドレス変更
   get "account/email", to: "accounts#edit_email"
