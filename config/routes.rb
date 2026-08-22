@@ -80,6 +80,8 @@ as: :destroy_approved_reward_card
   # アカウント設定
   # =========================
   get "account", to: "accounts#show"
+  get "account/delete", to: "accounts#delete"
+  delete "account", to: "accounts#destroy"
 
   # プロフィール変更
   get "account/profile", to: "accounts#edit_profile"
@@ -128,7 +130,7 @@ as: :destroy_approved_reward_card
   # =========================
   # お問い合わせ
   # =========================
-  resources :contacts, only: [ :new ]
+  resources :contacts, only: [ :new, :create ]
 
   # =========================
   # 法的ページ

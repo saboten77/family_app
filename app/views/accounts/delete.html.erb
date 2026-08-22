@@ -1,0 +1,33 @@
+<div class="account-delete-page">
+
+  <div class="account-delete-card">
+
+    <div class="delete-icon">⚠️</div>
+
+    <h1>アカウントを削除しますか？</h1>
+
+    <p class="delete-message">
+      アカウントを削除すると、<br>
+      登録した情報やポイントなどを<br>
+      利用できなくなります。
+    </p>
+
+    <p class="delete-warning">
+      ⚠️ この操作は取り消すことができません。
+    </p>
+
+    <%= button_to "アカウントを削除する",
+        account_path,
+        method: :delete,
+        class: "delete-button",
+        data: {
+          turbo_confirm: "本当にアカウントを削除しますか？"
+        } %>
+
+    <%= link_to "キャンセル",
+        account_path,
+        class: "cancel-button" %>
+
+  </div>
+
+</div>

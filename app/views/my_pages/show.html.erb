@@ -28,6 +28,10 @@
 
   <%= link_to "✉️ お問い合わせ", new_contact_path %>
 
+  <%= link_to "⚠️ アカウントを削除する",
+    account_delete_path,
+    class: "account-delete-link" %>
+
   <%= button_to "🚪 ログアウト",
     destroy_user_session_path,
     method: :delete,
