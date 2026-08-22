@@ -98,3 +98,118 @@
   font-size: 17px;
   font-weight: bold;
 }
+
+/* =========================
+   家事選択画面
+   ========================= */
+
+.task-select-card {
+  position: relative;
+
+  background: #fff;
+  border: 3px solid transparent;
+  border-radius: 22px;
+
+  min-height: 95px;
+  padding: 16px 10px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #3E3E3E;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.2s ease;
+}
+
+/* チェックボックスそのものは隠す */
+.task-select-card .task-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 選択したカード */
+.task-select-card:has(.task-checkbox:checked) {
+  background: #F5F9EB;
+  border-color: #A8C98A;
+  box-shadow: 0 6px 16px rgba(168, 201, 138, 0.3);
+
+  transform: translateY(-2px);
+}
+
+/* 選択したカードにチェックマーク */
+.task-select-card:has(.task-checkbox:checked)::after {
+  content: "✓";
+
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #A8C98A;
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* タップしたとき */
+.task-select-card:active {
+  transform: scale(0.97);
+}
+
+.task-select-card .task-name {
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* まとめて記録ボタン */
+.task-submit-area {
+  max-width: 380px;
+  margin: 24px auto 10px;
+}
+
+.task-submit-button {
+  width: 100%;
+
+  background: #A8C98A;
+  color: white;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.2s ease;
+}
+
+.task-submit-button:hover {
+  background: #97BB79;
+  transform: translateY(-2px);
+}
+
+.task-submit-button:active {
+  transform: scale(0.97);
+}

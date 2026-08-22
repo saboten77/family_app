@@ -1,25 +1,35 @@
 <div class="task-page">
 
-  <h1 class="page-title">🧹 家事一覧</h1>
+  <h1 class="page-title">🧹 今日やった家事を選んでね</h1>
 
-  <div class="task-list">
+  <%= form_with url: task_logs_path, method: :post, local: true do %>
 
-    <% @tasks.each do |task| %>
+    <div class="task-list">
 
-      <%= link_to new_task_log_path(task_id: task.id), class: "task-card" do %>
+      <% @tasks.each do |task| %>
 
-        <div class="task-name">
-          🏠 <%= task.name %>
-        </div>
+      <label class="task-select-card">
+        <%= check_box_tag "task_ids[]", task.id, false, class: "task-checkbox" %>
+
+      <div class="task-name">
+      🏠 <%= task.name %>
+      </div>
+      </label>
 
       <% end %>
 
-    <% end %>
+    </div>
 
-  </div>
+    <div class="task-submit-area">
+      <%= submit_tag "まとめて記録する", class: "task-submit-button" %>
+    </div>
+
+  <% end %>
 
   <div class="back-button-area">
-  <%= link_to "← 家事項目にもどる", task_categories_path, class: "back-button" %>
-</div>
+    <%= link_to "← 家事項目にもどる",
+                task_categories_path,
+                class: "back-button" %>
+  </div>
 
 </div>
