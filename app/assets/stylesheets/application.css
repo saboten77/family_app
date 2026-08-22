@@ -107,3 +107,4 @@ body {
  *= require_tree .
  *= require_self
 */
+@import "legal";

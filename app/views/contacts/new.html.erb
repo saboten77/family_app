@@ -1,10 +1,60 @@
-✉️ お問い合わせ
+<div class="contact-page">
 
-ご意見・ご要望がございましたら
-下記よりご連絡ください。
+  <div class="contact-card">
 
-（フォームは準備中です）
+    <div class="contact-icon">✉️🌱</div>
 
-<div class="back-button-area">
-  <%= link_to "🌿 マイページへ戻る", mypage_path, class: "back-button" %>
+    <h1>お問い合わせ</h1>
+
+    <p class="contact-message">
+      ポン吉のおうちについての<br>
+      ご意見・ご質問・ご要望などがありましたら、<br>
+      下記フォームよりお気軽にご連絡ください。
+    </p>
+
+    <% if flash[:alert] %>
+      <div class="contact-alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="contact-notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= form_with url: contacts_path, method: :post, local: true do |f| %>
+
+      <div class="contact-field">
+        <%= f.label :name, "お名前" %>
+        <%= f.text_field :name,
+                         placeholder: "お名前を入力してください" %>
+      </div>
+
+      <div class="contact-field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email,
+                          placeholder: "example@example.com" %>
+      </div>
+
+      <div class="contact-field">
+        <%= f.label :message, "お問い合わせ内容" %>
+        <%= f.text_area :message,
+                        rows: 7,
+                        placeholder: "お問い合わせ内容を入力してください" %>
+      </div>
+
+      <%= f.submit "📩 送信する", class: "contact-submit-button" %>
+
+    <% end %>
+
+  </div>
+
+  <div class="back-button-area">
+    <%= link_to "🌿 マイページへ戻る",
+                mypage_path,
+                class: "back-button" %>
+  </div>
+
 </div>
