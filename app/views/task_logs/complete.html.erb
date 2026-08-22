@@ -11,7 +11,7 @@
     </p>
 
     <div class="point">
-      🌱 +1 ポイント
+      🌱 +<%= flash[:task_count] || 0 %> ポイント
     </div>
 
     <%= link_to "🏠 ホームへ戻る",

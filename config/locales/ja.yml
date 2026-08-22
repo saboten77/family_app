@@ -2,6 +2,7 @@ ja:
   errors:
     messages:
       not_saved: "保存できませんでした"
+      confirmation: "パスワードが一致していません。もう一度確認してください"
 
   activerecord:
     errors:
