@@ -46,66 +46,65 @@
   </section>
 
   <!-- ========================================
-       PROBLEM
-  ========================================= -->
-  <section class="about-problem">
+     PROBLEM
+======================================== -->
+<section class="about-problem">
 
-    <div class="about-section-inner">
+  <div class="about-section-inner">
 
-      <div class="about-section-character">
-        <%= image_tag "characters/character1.png", alt: "ポン吉" %>
+    <div class="about-section-character">
+      <%= image_tag "characters/character1.png", alt: "ポン吉" %>
+    </div>
+
+    <p class="about-label">CHECK</p>
+
+    <h2>
+      こんなこと、<br>
+      ありませんか？
+    </h2>
+
+    <div class="about-speech-list">
+
+      <div class="about-speech">
+        <span>💭</span>
+        <p>「家族みんなで<br>家事を分担できたらいいな」</p>
       </div>
 
-      <p class="about-label">CHECK</p>
-
-      <h2>
-        こんなこと、<br>
-        ありませんか？
-      </h2>
-
-      <div class="about-speech-list">
-
-        <div class="about-speech">
-          <span>💭</span>
-          <p>「私ばっかり<br>家事してる気がする…」</p>
-        </div>
-
-        <div class="about-speech about-speech-right">
-          <span>💭</span>
-          <p>「言わないと<br>やってくれない…」</p>
-        </div>
-
-        <div class="about-speech">
-          <span>💭</span>
-          <p>「お願いするのも<br>なんだか疲れる…」</p>
-        </div>
-
-        <div class="about-speech about-speech-right">
-          <span>💭</span>
-          <p>「家族が何をしているか<br>よく分からない…」</p>
-        </div>
-
+      <div class="about-speech about-speech-right">
+        <span>💭</span>
+        <p>「家族がしていることを<br>もっと知りたいな」</p>
       </div>
 
-      <div class="about-problem-message">
-        <p>
-          家事って、実際にやったことだけじゃありません。
-        </p>
+      <div class="about-speech">
+        <span>💭</span>
+        <p>「『ありがとう』を<br>ちゃんと伝えたいな」</p>
+      </div>
 
-        <p>
-          考えたり、気づいたり、<br>
-          先回りしたりすることもたくさんあります。
-        </p>
-
-        <strong>
-          でも、それってなかなか見えません。
-        </strong>
+      <div class="about-speech about-speech-right">
+        <span>💭</span>
+        <p>「家事をもっと<br>楽しくできたらいいな」</p>
       </div>
 
     </div>
 
-  </section>
+    <div class="about-problem-message">
+      <p>
+        家事って、実際にやったことだけじゃありません。
+      </p>
 
+      <p>
+        考えたり、気づいたり、<br>
+        先回りしたりすることもたくさんあります。
+      </p>
+
+      <strong>
+        でも、それってなかなか見えません。
+      </strong>
+    </div>
+
+  </div>
+
+</section>
 
   <!-- ========================================
        INTRODUCTION
@@ -146,132 +145,134 @@
 
 
   <!-- ========================================
-       FEATURES
-  ========================================= -->
-  <section class="about-features">
+     FEATURES
+======================================== -->
+<section class="about-features">
 
-    <div class="about-section-inner">
+  <div class="about-section-inner">
 
-      <p class="about-label">FEATURES</p>
+    <p class="about-label">FEATURES</p>
 
-      <h2>
-        ポン吉でできること
-      </h2>
+    <h2>
+      ポン吉でできること
+    </h2>
 
-      <p class="about-section-lead">
-        家事を「やらなきゃ」で終わらせない。<br>
-        ちょっと楽しくなる仕掛けを用意しました。
-      </p>
+    <p class="about-section-lead">
+      家事を「やらなきゃ」で終わらせない。<br>
+      ちょっと楽しくなる仕掛けを用意しました。
+    </p>
 
-      <div class="about-feature-grid">
+    <div class="about-feature-grid">
 
-        <!-- 家事記録 -->
-        <article class="about-feature-card">
+      <!-- 01 家族の役割設定 -->
+      <article class="about-feature-card">
 
-          <div class="about-feature-icon about-feature-icon-green">
-            🧹
-          </div>
+        <p class="about-feature-number">01</p>
 
-          <p class="about-feature-number">01</p>
+        <h3>
+          家族の役割を設定
+        </h3>
 
-          <h3>
-            家事を記録
-          </h3>
+        <p>
+          家族それぞれの役割割合を設定して、<br>
+          無理なく支え合えるバランスを<br>
+          決めます。
+        </p>
 
-          <p>
-            いつもの家事を記録して、<br>
-            家族それぞれの頑張りを<br>
-            見える化します。
-          </p>
+        <%= image_tag "about/role_setting.png",
+            alt: "家族の役割割合を設定する画面" %>
 
-          <%= image_tag "about/task_log.png",
-              alt: "家事を記録する画面" %>
-
-        </article>
+      </article>
 
 
-        <!-- 家庭安定度 -->
-        <article class="about-feature-card">
+      <!-- 02 家事記録 -->
+      <article class="about-feature-card">
 
-          <div class="about-feature-icon about-feature-icon-yellow">
-            💚
-          </div>
+        <p class="about-feature-number">02</p>
 
-          <p class="about-feature-number">02</p>
+        <h3>
+          家事を記録
+        </h3>
 
-          <h3>
-            家庭安定度
-          </h3>
+        <p>
+          いつもの家事を記録して、<br>
+          家族それぞれの頑張りを<br>
+          見える化します。
+        </p>
 
-          <p>
-            家族の家事の状況から、<br>
-            今のおうちの状態を<br>
-            ひと目でチェック。
-          </p>
+        <%= image_tag "about/task_log.png",
+            alt: "家事を記録する画面" %>
 
-          <div class="about-feature-simple">
-            <span>家族の頑張り</span>
-            <strong>見える化</strong>
-          </div>
-
-        </article>
+      </article>
 
 
-        <!-- ガチャ -->
-        <article class="about-feature-card">
+      <!-- 03 家庭安定度 -->
+<article class="about-feature-card">
 
-          <div class="about-feature-icon about-feature-icon-pink">
-            🎰
-          </div>
+  <p class="about-feature-number">03</p>
 
-          <p class="about-feature-number">03</p>
+  <h3>
+    家庭安定度
+  </h3>
 
-          <h3>
-            ポン吉ガチャ
-          </h3>
+  <p>
+    家族の家事の状況から、<br>
+    今のおうちの状態を<br>
+    ひと目でチェック。
+  </p>
 
-          <p>
-            家事をしたら<br>
-            ポン吉ガチャにチャレンジ！<br>
-            何が出るかな？
-          </p>
+  <%= image_tag "about/dashboard.png",
+      alt: "家庭安定度を確認できるダッシュボード" %>
 
-          <%= image_tag "about/gacha.png",
-              alt: "ポン吉ガチャの画面" %>
-
-        </article>
+</article>
 
 
-        <!-- ご褒美カード -->
-        <article class="about-feature-card">
+      <!-- 04 ガチャ -->
+      <article class="about-feature-card">
 
-          <div class="about-feature-icon about-feature-icon-blue">
-            🎁
-          </div>
+        <p class="about-feature-number">04</p>
 
-          <p class="about-feature-number">04</p>
+        <h3>
+          ポン吉ガチャ
+        </h3>
 
-          <h3>
-            ご褒美カード
-          </h3>
+        <p>
+          家事をしたら<br>
+          ポン吉ガチャにチャレンジ！<br>
+          何が出るかな？
+        </p>
 
-          <p>
-            「これお願い！」を<br>
-            ちょっと楽しい<br>
-            家族のやり取りに。
-          </p>
+        <%= image_tag "about/gacha.png",
+            alt: "ポン吉ガチャの画面" %>
 
-          <%= image_tag "about/reward_card.png",
-              alt: "ご褒美カードの画面" %>
+      </article>
 
-        </article>
 
-      </div>
+      <!-- 05 ご褒美カード -->
+      <article class="about-feature-card">
+
+        <p class="about-feature-number">05</p>
+
+        <h3>
+          ご褒美カード
+        </h3>
+
+        <p>
+          「これお願い！」を<br>
+          ちょっと楽しい<br>
+          家族のやり取りに。
+        </p>
+
+        <%= image_tag "about/reward_card.png",
+            alt: "ご褒美カードの画面" %>
+
+      </article>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
   <!-- ========================================
        FLOW
@@ -595,8 +596,8 @@
       </div>
 
       <p class="about-character-message">
-        あなたのおうちには、<br>
-        どの子がやってくるかな？
+        お気に入りの子を選んで、<br>
+        家族で家事をはじめよう。
       </p>
 
     </div>
