@@ -1,0 +1,638 @@
+<div class="about-page">
+
+  <!-- ========================================
+       HERO
+  ========================================= -->
+  <section class="about-hero">
+
+    <div class="about-hero-deco about-hero-deco-1">✦</div>
+    <div class="about-hero-deco about-hero-deco-2">✧</div>
+    <div class="about-hero-deco about-hero-deco-3">●</div>
+
+    <div class="about-hero-character">
+      <%= image_tag "ponkichi-icon.png", alt: "ポン吉" %>
+    </div>
+
+    <p class="about-eyebrow">
+      家族の毎日を、ちょっと楽しく。
+    </p>
+
+  <div class="about-hero-image">
+
+  <%= image_tag "about/hero.png",
+      alt: "ポン吉のおうち",
+      class: "hero-image" %>
+
+  <h1 class="about-hero-title">
+    ポン吉のおうち
+  </h1>
+
+  <p class="about-hero-copy">
+    家族の「ありがとう」を、<br>
+    もっと見えるカタチに。
+  </p>
+
+<p class="about-hero-description">
+  家事を記録して、家族の頑張りを見える化。<br>
+  ポン吉と一緒に、家族の毎日をちょっと楽しく。
+</p>
+
+<%= link_to "無料で始める",
+    new_user_registration_path,
+    class: "about-main-button" %>
+
+</div>
+
+  </section>
+
+  <!-- ========================================
+       PROBLEM
+  ========================================= -->
+  <section class="about-problem">
+
+    <div class="about-section-inner">
+
+      <div class="about-section-character">
+        <%= image_tag "characters/character1.png", alt: "ポン吉" %>
+      </div>
+
+      <p class="about-label">CHECK</p>
+
+      <h2>
+        こんなこと、<br>
+        ありませんか？
+      </h2>
+
+      <div class="about-speech-list">
+
+        <div class="about-speech">
+          <span>💭</span>
+          <p>「私ばっかり<br>家事してる気がする…」</p>
+        </div>
+
+        <div class="about-speech about-speech-right">
+          <span>💭</span>
+          <p>「言わないと<br>やってくれない…」</p>
+        </div>
+
+        <div class="about-speech">
+          <span>💭</span>
+          <p>「お願いするのも<br>なんだか疲れる…」</p>
+        </div>
+
+        <div class="about-speech about-speech-right">
+          <span>💭</span>
+          <p>「家族が何をしているか<br>よく分からない…」</p>
+        </div>
+
+      </div>
+
+      <div class="about-problem-message">
+        <p>
+          家事って、実際にやったことだけじゃありません。
+        </p>
+
+        <p>
+          考えたり、気づいたり、<br>
+          先回りしたりすることもたくさんあります。
+        </p>
+
+        <strong>
+          でも、それってなかなか見えません。
+        </strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       INTRODUCTION
+  ========================================= -->
+  <section class="about-introduction">
+
+    <div class="about-section-inner">
+
+      <div class="about-house-icon">
+        🏠
+      </div>
+
+      <p class="about-label">ABOUT PONKICHI</p>
+
+      <h2>
+        ポン吉のおうちって？
+      </h2>
+
+      <p class="about-lead">
+        家族の家事を「見える化」して、<br>
+        みんなで協力しやすくするアプリです。
+      </p>
+
+      <div class="about-dashboard-mockup">
+        <div class="about-mockup-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <%= image_tag "about/dashboard.png",
+            alt: "ポン吉のおうちのダッシュボード" %>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FEATURES
+  ========================================= -->
+  <section class="about-features">
+
+    <div class="about-section-inner">
+
+      <p class="about-label">FEATURES</p>
+
+      <h2>
+        ポン吉でできること
+      </h2>
+
+      <p class="about-section-lead">
+        家事を「やらなきゃ」で終わらせない。<br>
+        ちょっと楽しくなる仕掛けを用意しました。
+      </p>
+
+      <div class="about-feature-grid">
+
+        <!-- 家事記録 -->
+        <article class="about-feature-card">
+
+          <div class="about-feature-icon about-feature-icon-green">
+            🧹
+          </div>
+
+          <p class="about-feature-number">01</p>
+
+          <h3>
+            家事を記録
+          </h3>
+
+          <p>
+            いつもの家事を記録して、<br>
+            家族それぞれの頑張りを<br>
+            見える化します。
+          </p>
+
+          <%= image_tag "about/task_log.png",
+              alt: "家事を記録する画面" %>
+
+        </article>
+
+
+        <!-- 家庭安定度 -->
+        <article class="about-feature-card">
+
+          <div class="about-feature-icon about-feature-icon-yellow">
+            💚
+          </div>
+
+          <p class="about-feature-number">02</p>
+
+          <h3>
+            家庭安定度
+          </h3>
+
+          <p>
+            家族の家事の状況から、<br>
+            今のおうちの状態を<br>
+            ひと目でチェック。
+          </p>
+
+          <div class="about-feature-simple">
+            <span>家族の頑張り</span>
+            <strong>見える化</strong>
+          </div>
+
+        </article>
+
+
+        <!-- ガチャ -->
+        <article class="about-feature-card">
+
+          <div class="about-feature-icon about-feature-icon-pink">
+            🎰
+          </div>
+
+          <p class="about-feature-number">03</p>
+
+          <h3>
+            ポン吉ガチャ
+          </h3>
+
+          <p>
+            家事をしたら<br>
+            ポン吉ガチャにチャレンジ！<br>
+            何が出るかな？
+          </p>
+
+          <%= image_tag "about/gacha.png",
+              alt: "ポン吉ガチャの画面" %>
+
+        </article>
+
+
+        <!-- ご褒美カード -->
+        <article class="about-feature-card">
+
+          <div class="about-feature-icon about-feature-icon-blue">
+            🎁
+          </div>
+
+          <p class="about-feature-number">04</p>
+
+          <h3>
+            ご褒美カード
+          </h3>
+
+          <p>
+            「これお願い！」を<br>
+            ちょっと楽しい<br>
+            家族のやり取りに。
+          </p>
+
+          <%= image_tag "about/reward_card.png",
+              alt: "ご褒美カードの画面" %>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FLOW
+  ========================================= -->
+  <section class="about-flow">
+
+    <div class="about-section-inner">
+
+      <p class="about-label">HOW IT WORKS</p>
+
+      <h2>
+        家事をすると、<br>
+        ちょっと楽しい。
+      </h2>
+
+      <div class="about-flow-character">
+        <%= image_tag "characters/character2.png", alt: "ポン吉" %>
+      </div>
+
+      <div class="about-flow-list">
+
+        <div class="about-flow-item">
+
+          <div class="about-flow-number">
+            01
+          </div>
+
+          <div class="about-flow-content">
+
+            <h3>家事をする</h3>
+
+            <p>
+              いつもの家事を<br>
+              家族みんなで分担します。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-flow-item">
+
+          <div class="about-flow-number">
+            02
+          </div>
+
+          <div class="about-flow-content">
+
+            <h3>記録する</h3>
+
+            <%= image_tag "about/task_log.png",
+                alt: "家事記録画面" %>
+
+            <p>
+              やった家事を<br>
+              ポン吉に記録します。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-flow-item about-flow-gacha">
+
+          <div class="about-flow-number">
+            03
+          </div>
+
+          <div class="about-flow-content">
+
+            <h3>ポン吉ガチャ！</h3>
+
+            <%= image_tag "about/gacha.png",
+                alt: "ポン吉ガチャ画面" %>
+
+            <p>
+              家事をしたら<br>
+              ポン吉ガチャにチャレンジ！
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       PONKICHI FLOW
+       ========================================= -->
+  <section class="about-how">
+
+    <div class="about-section-inner">
+
+      <p class="about-label">PONKICHI FLOW</p>
+
+      <h2>
+        ポン吉のおうちは、<br>
+        こんなふうに楽しむよ。
+      </h2>
+
+      <p class="about-section-lead">
+        家事をしたら記録。<br>
+        みんなの頑張りがたまると、ちょっと嬉しいことが起こります。
+      </p>
+
+      <div class="about-how-flow">
+
+        <div class="about-how-item">
+
+          <div class="about-how-icon">
+            🧹
+          </div>
+
+          <span class="about-how-number">01</span>
+
+          <h3>家事をする</h3>
+
+          <p>
+            いつもの家事を<br>
+            家族みんなで分担します。
+          </p>
+
+        </div>
+
+
+        <div class="about-how-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-how-item">
+
+          <div class="about-how-icon">
+            📝
+          </div>
+
+          <span class="about-how-number">02</span>
+
+          <h3>記録する</h3>
+
+          <p>
+            やった家事を<br>
+            ポン吉に記録します。
+          </p>
+
+        </div>
+
+
+        <div class="about-how-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-how-item">
+
+          <div class="about-how-icon">
+            💚
+          </div>
+
+          <span class="about-how-number">03</span>
+
+          <h3>家族の頑張りがたまる</h3>
+
+          <p>
+            家庭安定度で<br>
+            おうちの状態をチェック。
+          </p>
+
+        </div>
+
+
+        <div class="about-how-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-how-item about-how-item-special">
+
+          <div class="about-how-icon">
+            🎰
+          </div>
+
+          <span class="about-how-number">04</span>
+
+          <h3>ポン吉ガチャ！</h3>
+
+          <p>
+            家事を頑張ったら<br>
+            ガチャにチャレンジ！
+          </p>
+
+        </div>
+
+
+        <div class="about-how-arrow">
+          ↓
+        </div>
+
+
+        <div class="about-how-item about-how-item-reward">
+
+          <div class="about-how-icon">
+            🎁
+          </div>
+
+          <span class="about-how-number">05</span>
+
+          <h3>ご褒美ゲット</h3>
+
+          <p>
+            家族との時間や<br>
+            小さなご褒美を楽しもう。
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="about-how-message">
+
+        <div class="about-how-message-character">
+          <%= image_tag "ponkichi-icon.png", alt: "ポン吉" %>
+        </div>
+
+        <div>
+          <p>
+            家事って、やったら終わりじゃないんだよ。
+          </p>
+
+          <strong>
+            「やってくれてありがとう！」が<br>
+            ちゃんと見えるようにしよう🐾
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       REWARD
+  ========================================= -->
+  <section class="about-reward">
+
+    <div class="about-section-inner">
+
+      <div class="about-reward-character">
+        <%= image_tag "characters/character3.png", alt: "ポン吉" %>
+      </div>
+
+      <p class="about-label">REWARD CARD</p>
+
+      <h2>
+        「お願い」を、<br>
+        ご褒美カードに。
+      </h2>
+
+      <p class="about-section-lead">
+        家族への「お願い」を、<br>
+        ちょっと楽しいやり取りに変えてみよう。
+      </p>
+
+      <div class="about-reward-image">
+        <%= image_tag "about/reward_card.png",
+            alt: "ご褒美カード" %>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       CHARACTERS
+  ========================================= -->
+  <section class="about-characters">
+
+    <div class="about-section-inner">
+
+      <p class="about-label">PONKICHI FRIENDS</p>
+
+      <h2>
+        ポン吉と一緒に<br>
+        はじめよう。
+      </h2>
+
+      <p class="about-section-lead">
+        ポン吉のおうちには、<br>
+        個性豊かな仲間たちがいます。
+      </p>
+
+      <div class="about-character-grid">
+
+        <% (1..6).each do |number| %>
+          <div class="about-character-card">
+            <div class="about-character-circle">
+              <%= image_tag "characters/character#{number}.png",
+                  alt: "ポン吉のキャラクター#{number}" %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+
+      <p class="about-character-message">
+        あなたのおうちには、<br>
+        どの子がやってくるかな？
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FINAL CTA
+  ========================================= -->
+  <section class="about-final">
+
+    <div class="about-final-decoration">
+      ✦　🐾　✦
+    </div>
+
+    <div class="about-final-character">
+      <%= image_tag "ponkichi-icon.png", alt: "ポン吉" %>
+    </div>
+
+    <p class="about-label">LET'S START</p>
+
+    <h2>
+      家事を「やらなきゃ」から、<br>
+      「一緒にやろう」へ。
+    </h2>
+
+    <p class="about-final-copy">
+      ポン吉と一緒に、<br>
+      家族の毎日をちょっと楽しく。
+    </p>
+
+    <%= link_to "無料で始める",
+        new_user_registration_path,
+        class: "about-main-button about-final-button" %>
+
+  </section>
+
+</div>

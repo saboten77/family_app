@@ -137,6 +137,7 @@ as: :destroy_approved_reward_card
   # =========================
   get "terms", to: "pages#terms"
   get "privacy", to: "pages#privacy"
+  get "about", to: "pages#about"
 
   # =========================
   # PWA
