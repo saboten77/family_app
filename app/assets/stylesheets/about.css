@@ -656,7 +656,7 @@
   padding: 120px 0;
   background:
     radial-gradient(circle at 10% 20%, rgba(220,236,210,.5) 0 90px, transparent 91px),
-    radial-gradient(circle at 90% 70%, rgba(248,239,194,.7) 0 120px, transparent 121px),
+    radial-gradient(circle at 90% 70%, rgba(248,239,194,.9)) 0 120px, transparent 121px),
     #fffdf7;
 }
 
@@ -1212,4 +1212,20 @@
   .about-how-message strong {
     font-size: 14px;
   }
+
+  .about-hero-copy {
+  font-size: 20px;
+  top: 5%;
+  }
+  
+  .about-hero-image img {
+  border-radius: 20px;
+  transform: translateY(-40px);
+  }
+
+  .about-hero-title {
+  margin-top: -40px;
+  transform: translateY(50px);
+}
+
 }
