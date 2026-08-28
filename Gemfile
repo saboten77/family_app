@@ -70,6 +70,6 @@ end
 
 gem "kaminari"
 
-gem "resend", "~> 1.7"
+gem "resend", "~> 1.11"
 
 gem "dotenv", "~> 3.2"
