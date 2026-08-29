@@ -8,7 +8,7 @@ class TaskHistoriesController < ApplicationController
                    .joins(:family_member)
                    .where(family_members: { family_id: family.id })
                    .includes(:task, family_member: :user)
-                   .order(completed_at: :desc)
+                   .order(completed_at: :desc, id: :desc)
                    .page(params[:page])
                    .per(10)
   end
