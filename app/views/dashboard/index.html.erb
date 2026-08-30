@@ -43,23 +43,53 @@
 
 <div class="room-area">
 
-  <% @characters.each do |character| %>
+  <div class="room-area">
 
-  <div class="ponkichi"
-       style="
-         left:<%= character[:position][:left] %>;
-         top:<%= character[:position][:top] %>;
-       ">
+  <%= link_to board_posts_path, class: "whiteboard-link" do %>
 
-    <%= image_tag character[:image],
-          class: "ponkichi-image" %>
+  <div class="whiteboard">
+
+    <div class="whiteboard-title">
+      📝 伝言板
+    </div>
+
+    <div class="whiteboard-content">
+
+      <% if @board_posts.any? %>
+
+        <% @board_posts.each do |post| %>
+          <p>📌 <%= truncate(post.body, length: 28) %></p>
+        <% end %>
+
+      <% else %>
+
+        <p>📝 まだメモはありません</p>
+        <p>タップして書き込もう✨</p>
+
+      <% end %>
+
+    </div>
 
   </div>
 
 <% end %>
 
-</div>
+  <% @characters.each do |character| %>
 
+    <div class="ponkichi"
+         style="
+           left:<%= character[:position][:left] %>;
+           top:<%= character[:position][:top] %>;
+         ">
+
+      <%= image_tag character[:image],
+            class: "ponkichi-image" %>
+
+    </div>
+
+  <% end %>
+
+</div>
 
 <nav class="bottom-nav">
   <%= link_to task_categories_path, class: "nav-item" do %>

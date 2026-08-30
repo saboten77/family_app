@@ -38,7 +38,7 @@ body {
 }
 
 /* =========================
-   スマホ背景（デフォルト）
+   背景
 ========================= */
 
 .dashboard.background1 {
@@ -58,7 +58,7 @@ body {
 }
 
 /* =========================
-   PC背景（スマホ背景を上書き）
+   PC背景
 ========================= */
 
 @media (min-width: 769px) {
@@ -143,7 +143,7 @@ body {
   padding: 12px;
   background: white;
   border-radius: 18px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
 .status-top {
@@ -192,7 +192,6 @@ body {
   bottom: 14px;
   left: 14px;
   right: 14px;
-
   height: 64px;
 
   display: flex;
@@ -212,14 +211,14 @@ body {
   text-decoration: none;
   color: #333;
   font-size: 11px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .nav-item .icon {
   display: block;
   font-size: 22px;
   margin-bottom: 2px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .nav-item.active {
@@ -231,7 +230,7 @@ body {
 }
 
 /* =========================
-   その他
+   ヘッダー
 ========================= */
 
 .menu-button {
@@ -245,4 +244,86 @@ body {
   display: flex;
   align-items: center;
   padding: 0 20px;
+}
+
+/* =========================
+   ホワイトボード
+========================= */
+
+.whiteboard {
+  position: absolute;
+
+  left: 8%;
+  top: -270px;
+
+  width: 220px;
+  min-height: 150px;
+
+  background: #fffdf5;
+
+  border: 6px solid #c99a6b;
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 0 #a9794e,
+    0 8px 15px rgba(0, 0, 0, 0.15);
+
+  padding: 14px;
+
+  transform: rotate(-2deg);
+}
+
+.whiteboard-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5f5147;
+
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  border-bottom: 2px dashed #d8c9b8;
+}
+
+.whiteboard-content {
+  color: #4d4d4d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.whiteboard-content p {
+  margin: 6px 0;
+}
+
+.whiteboard-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   スマホ用ホワイトボード
+========================= */
+
+@media (max-width: 768px) {
+  .whiteboard {
+    left: 3%;
+    top: -240px;
+
+    width: 120px;
+    min-height: 150px;
+
+    padding: 8px;
+    border-width: 4px;
+
+    transform: rotate(-2deg);
+  }
+
+  .whiteboard-title {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .whiteboard-content {
+    font-size: 10px;
+    line-height: 1.4;
+  }
 }

@@ -1,0 +1,51 @@
+<div class="board-page">
+
+  <h1 class="page-title">
+    📋 家族のホワイトボード
+  </h1>
+
+  <div class="board-actions">
+    <%= link_to "✏️ 書き込む",
+                new_board_post_path,
+                class: "board-write-button" %>
+  </div>
+
+  <div class="board-post-list">
+
+<% @board_posts.each do |post| %>
+
+  <div class="board-post-card">
+
+    <div class="board-post-body">
+      <%= simple_format(post.body) %>
+    </div>
+
+    <div class="board-post-author">
+      👤 <%= post.family_member.user.name %>
+    </div>
+
+    <div class="board-post-delete">
+      <%= button_to "🗑️ 付箋を剥がす",
+                    board_post_path(post),
+                    method: :delete,
+                    class: "board-delete-button",
+                    data: { turbo: false } %>
+    </div>
+
+  </div>
+
+<% end %>
+
+  </div>
+
+  <div class="dashboard-back">
+    <%= link_to dashboard_path, class: "back-home-button" do %>
+      🏠 ポン吉のお家へ戻る
+    <% end %>
+  </div>
+
+  <div class="pagination-area">
+    <%= paginate @board_posts %>
+  </div>
+
+</div>
