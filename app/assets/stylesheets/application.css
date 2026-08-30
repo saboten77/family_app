@@ -102,7 +102,6 @@ body {
 }
 
 @import "task_categories";
-@import "board_posts";
 
 /*
  *= require_tree .
