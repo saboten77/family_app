@@ -11,7 +11,6 @@ family = current_user.families.first
                  .order(created_at: :desc)
                  .page(params[:page])
                  .per(10)
-
 end
 
 def new
@@ -23,7 +22,6 @@ family = current_user.families.first
                 .count >= 3
 
 @board_post = BoardPost.new
-
 end
 
 def create
@@ -46,7 +44,6 @@ if @board_post.save
 else
   render :new, status: :unprocessable_entity
 end
-
 end
 
 def destroy
@@ -60,7 +57,6 @@ family = current_user.families.first
 @board_post.destroy
 
 redirect_to board_posts_path
-
 end
 
 private

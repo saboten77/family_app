@@ -38,7 +38,7 @@ class DashboardController < ApplicationController
     ].shuffle
 
     @characters = []
-    
+
     @board_posts = BoardPost
     .joins(:family_member)
     .where(family_members: { family_id: @family.id })
