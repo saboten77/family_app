@@ -38,6 +38,12 @@ class DashboardController < ApplicationController
     ].shuffle
 
     @characters = []
+    
+    @board_posts = BoardPost
+    .joins(:family_member)
+    .where(family_members: { family_id: @family.id })
+    .order(created_at: :desc)
+    .limit(3)
 
     @family_members = @family.family_members.includes(:user)
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # =========================
   # 認証
   # =========================
@@ -63,6 +64,10 @@ as: :destroy_approved_reward_card
   end
 
   get "task_histories", to: "task_histories#index"
+  # =========================
+  # 家族のホワイトボード
+  # =========================
+  resources :board_posts, only: [ :index, :new, :create, :destroy ]
 
   # =========================
   # 家族
