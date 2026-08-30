@@ -254,7 +254,7 @@ body {
   position: absolute;
 
   left: 8%;
-  top: -270px;
+  top: 0px;
 
   width: 220px;
   min-height: 150px;
@@ -306,10 +306,10 @@ body {
 @media (max-width: 768px) {
   .whiteboard {
     left: 3%;
-    top: -240px;
+    top: 120px;
 
     width: 120px;
-    min-height: 150px;
+    min-height: 120px;
 
     padding: 8px;
     border-width: 4px;

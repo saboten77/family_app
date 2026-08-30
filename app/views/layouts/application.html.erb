@@ -20,7 +20,7 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="<%= asset_path('ponkichi-icon.png') %>">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%# 全体共通CSS %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "dashboard", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "my_pages", "data-turbo-track": "reload" %>
@@ -38,6 +38,11 @@
     <%= stylesheet_link_tag "contacts", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "account_delete", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "about", "data-turbo-track": "reload" %>
+
+    <%# ホワイトボード画面だけCSSを読み込む %>
+    <% if controller_name == "board_posts" %>
+      <%= stylesheet_link_tag "board_posts", "data-turbo-track": "reload" %>
+    <% end %>
 
     <%= javascript_importmap_tags %>
   </head>
