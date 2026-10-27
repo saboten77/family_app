@@ -9,10 +9,7 @@ development:
 
 test:
   <<: *default
-  database: family_app_test
-  username: postgres
-  password: password
-  host: localhost
+  url: postgresql://postgres@localhost:5432/family_app_test
 
 production:
   primary:

@@ -96,6 +96,12 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Check test database configuration without connecting
+        run: bundle exec ruby script/check_test_database_configuration.rb
+
+      - name: Run database safety unit tests without connecting
+        run: bundle exec ruby test/database_safety/test_database_guard_test.rb
+
       - name: Run tests
         env:
           RAILS_ENV: test
