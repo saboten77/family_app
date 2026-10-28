@@ -3,7 +3,7 @@
 module DatabaseSafety
   class TestDatabaseGuard
     EXPECTED_URL = "postgresql://postgres@localhost:5432/family_app_test"
-    EXPECTED_DATABASES = ["primary"].freeze
+    EXPECTED_DATABASES = [ "primary" ].freeze
     FAILURE_MESSAGE = "Test database safety check failed; database configuration values were not displayed."
 
     class UnsafeConfigurationError < StandardError

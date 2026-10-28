@@ -42,7 +42,7 @@ class TestDatabaseGuardTest < Minitest::Test
   end
 
   def test_accepts_the_expected_single_local_test_database
-    configurations = Configurations.new([@config])
+    configurations = Configurations.new([ @config ])
 
     assert DatabaseSafety::TestDatabaseGuard.verify!(configurations)
     assert_equal({ env_name: "test", include_hidden: true }, configurations.arguments)
@@ -50,19 +50,19 @@ class TestDatabaseGuardTest < Minitest::Test
 
   def test_rejects_each_unexpected_connection_setting_with_its_condition_name
     invalid_configs = [
-      [@config.dup.tap { |config| config.url = "postgresql://private-password@secret.example/secret_db" }, :url],
-      [@config.dup.tap { |config| config.adapter = "mysql2" }, :adapter],
-      [@config.dup.tap { |config| config.host = "secret.example" }, :host],
-      [@config.dup.tap { |config| config.database = "secret_db" }, :database],
-      [@config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "private-user" } }, :username],
-      [@config.dup.tap { |config| config.configuration_hash = { port: 5433, username: "postgres" } }, :port],
-      [@config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "postgres", password: "private-password" } }, :password],
-      [@config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "postgres", hostaddr: "192.0.2.1" } }, :hostaddr]
+      [ @config.dup.tap { |config| config.url = "postgresql://private-password@secret.example/secret_db" }, :url ],
+      [ @config.dup.tap { |config| config.adapter = "mysql2" }, :adapter ],
+      [ @config.dup.tap { |config| config.host = "secret.example" }, :host ],
+      [ @config.dup.tap { |config| config.database = "secret_db" }, :database ],
+      [ @config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "private-user" } }, :username ],
+      [ @config.dup.tap { |config| config.configuration_hash = { port: 5433, username: "postgres" } }, :port ],
+      [ @config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "postgres", password: "private-password" } }, :password ],
+      [ @config.dup.tap { |config| config.configuration_hash = { port: 5432, username: "postgres", hostaddr: "192.0.2.1" } }, :hostaddr ]
     ]
 
     invalid_configs.each do |config, condition|
       error = assert_raises(DatabaseSafety::TestDatabaseGuard::UnsafeConfigurationError) do
-        DatabaseSafety::TestDatabaseGuard.verify!(Configurations.new([config]))
+        DatabaseSafety::TestDatabaseGuard.verify!(Configurations.new([ config ]))
       end
 
       assert_equal condition.to_s, error.condition
@@ -76,7 +76,7 @@ class TestDatabaseGuardTest < Minitest::Test
     queue = @config.dup
     queue.name = "queue"
 
-    [[], [@config, queue]].each do |configs|
+    [ [], [ @config, queue ] ].each do |configs|
       error = assert_raises(DatabaseSafety::TestDatabaseGuard::UnsafeConfigurationError) do
         DatabaseSafety::TestDatabaseGuard.verify!(Configurations.new(configs))
       end
@@ -88,7 +88,7 @@ class TestDatabaseGuardTest < Minitest::Test
     { "PGSERVICE" => :pgservice, "PGHOSTADDR" => :pghostaddr }.each do |key, condition|
       with_environment(key, "private-value") do
         error = assert_raises(DatabaseSafety::TestDatabaseGuard::UnsafeConfigurationError) do
-          DatabaseSafety::TestDatabaseGuard.verify!(Configurations.new([@config]))
+          DatabaseSafety::TestDatabaseGuard.verify!(Configurations.new([ @config ]))
         end
         assert_equal condition.to_s, error.condition
         refute_includes DatabaseSafety::TestDatabaseGuard.diagnostic_line(error), "private-value"
